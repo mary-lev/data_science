@@ -1,5 +1,4 @@
-# Data Science: Academic year 2023/2024
-
+# About
 This space contains all the material related to the [Data Science course](https://www.unibo.it/en/teaching/course-unit-catalogue/course-unit/2023/467046) of the [Digital Humanities and Digital Knowledge degree](https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge) at the [University of Bologna](http://www.unibo.it/en).
 
 __Silvio Peroni__  _[silvio\.peroni@unibo\.it](mailto:silvio.peroni@unibo.it)_ / _[https://orcid\.org/0000\-0003\-0530\-4305](https://orcid.org/0000-0003-0530-4305)_ / _[@essepuntato](https://twitter.com/essepuntato)_
@@ -67,26 +66,26 @@ _[Data Science \(A\.Y\. 2022/2023\)](https://www.unibo.it/en/teaching/course-uni
 
 ### Schedule
 
-<table>
-  <tr><td>29/01/24</td><td>12:00-14:00</td><td>Introduction to the course and final project specifications</td></tr>
-  <tr><td>02/02/24</td><td>12:00-14:00</td><td>What is a datum and how it can be represented computationally</td></tr>
-  <tr><td>05/02/24</td><td>12:00-14:00</td><td>Data formats and methods for storing data in Python</td></tr>
-  <tr><td>07/02/24</td><td>12:00-14:00</td><td>Introduction to data modelling</td></tr>
-  <tr><td>09/02/24</td><td>12:00-14:00</td><td>Implementation of data models via Python classes</td></tr>
-  <tr><td>12/02/24</td><td>12:00-14:00</td><td>Processing and querying the data</td></tr>
-  <tr><td>14/02/24</td><td>12:00-14:00</td><td>Introduction to Pandas</td></tr>
-  <tr><td>16/02/24</td><td>12:00-14:00</td><td>Database Management Systems</td></tr>
-  <tr><td>19/02/24</td><td>12:00-14:00</td><td>Configuring and populating a relational database</td></tr>
-  <tr><td>21/03/24</td><td>12:00-14:00</td><td>SQL, a query language for relational databases</td></tr>
-  <tr><td>23/03/24</td><td>12:00-14:00</td><td>Configuring and populating a graph database</td></tr>
-  <tr><td>26/02/24</td><td>12:00-14:00</td><td>SPARQL, a query language for RDF databases</td></tr>
-  <tr><td>28/02/24</td><td>12:00-14:00</td><td>Interacting with databases using Pandas</td></tr>
-  <tr><td>01/03/24</td><td>12:00-14:00</td><td>Describing and visualising data</td></tr>
-  <tr><td>04/03/24</td><td>12:00-14:00</td><td>Descriptive statistics and graphs about data using Pandas</td></tr>
-</table>
+| Date     | Time       | Topic                                                      |
+|----------|------------|---------------------------------------------------------------|
+| 29/01/24 | 12:00-14:00 | Introduction to the course and final project specifications   |
+| 02/02/24 | 12:00-14:00 | What is a datum and how it can be represented computationally |
+| 05/02/24 | 12:00-14:00 | Data formats and methods for storing data in Python           |
+| 07/02/24 | 12:00-14:00 | Introduction to data modelling                                |
+| 09/02/24 | 12:00-14:00 | Implementation of data models via Python classes              |
+| 12/02/24 | 12:00-14:00 | Processing and querying the data                              |
+| 14/02/24 | 12:00-14:00 | Introduction to Pandas                                        |
+| 16/02/24 | 12:00-14:00 | Database Management Systems                                   |
+| 19/02/24 | 12:00-14:00 | Configuring and populating a relational database              |
+| 21/03/24 | 12:00-14:00 | SQL, a query language for relational databases                |
+| 23/03/24 | 12:00-14:00 | Configuring and populating a graph database                   |
+| 26/02/24 | 12:00-14:00 | SPARQL, a query language for RDF databases                    |
+| 28/02/24 | 12:00-14:00 | Interacting with databases using Pandas                       |
+| 01/03/24 | 12:00-14:00 | Describing and visualising data                               |
+| 04/03/24 | 12:00-14:00 | Descriptive statistics and graphs about data using Pandas     |
 
 
-# Links
+### Links
 
 - Some complementary books on the topic:
   * [A critical field guide for working with machine learning datasets](https://knowingmachines.org/critical-field-guide)
