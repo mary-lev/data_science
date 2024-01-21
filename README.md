@@ -1,8 +1,11 @@
 # Data Science: Academic year 2023/2024
 
+This space contains all the material related to the [Data Science course](https://www.unibo.it/en/teaching/course-unit-catalogue/course-unit/2023/467046) of the [Digital Humanities and Digital Knowledge degree](https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge) at the [University of Bologna](http://www.unibo.it/en).
+
 __Silvio Peroni__  _[silvio\.peroni@unibo\.it](mailto:silvio.peroni@unibo.it)_ / _[https://orcid\.org/0000\-0003\-0530\-4305](https://orcid.org/0000-0003-0530-4305)_ / _[@essepuntato](https://twitter.com/essepuntato)_
 
 _[Data Science \(A\.Y\. 2022/2023\)](https://www.unibo.it/en/teaching/course-unit-catalogue/course-unit/2023/467046)_ / _[Second Cycle Degree in Digital Humanities and Digital Knowledge](https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge)_ / _[Alma Mater Studiorum \- Università di Bologna](http://www.unibo.it/en)_
+
 
 ## Material
 
