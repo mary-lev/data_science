@@ -1,10 +1,5 @@
 # Introduction to the course and final project specifications
 
-__Silvio Peroni__  _[silvio\.peroni@unibo\.it](mailto:silvio.peroni@unibo.it)_ / _[https://orcid\.org/0000\-0003\-0530\-4305](https://orcid.org/0000-0003-0530-4305)_ / _[@essepuntato](https://twitter.com/essepuntato)_
-
-_[Data Science \(A\.Y\. 2022/2023\)](https://www.unibo.it/it/didattica/insegnamenti/insegnamento/2022/467046)_ / _[Second Cycle Degree in Digital Humanities and Digital Knowledge](https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge)_ / _[Alma Mater Studiorum \- Università di Bologna](http://www.unibo.it/en)_
-
-
 A preliminary introduction to the basic tools that enable you to start a Data Science project
 (and get the final score for the integrated course “Computational Management of Data”)
 
