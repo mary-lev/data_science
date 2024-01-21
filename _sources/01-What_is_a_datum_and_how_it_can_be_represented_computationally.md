@@ -33,25 +33,19 @@ Examples:
 
 We can use a directed graph with labelled edges representing the  <span style="color:#3C78D8">predicate</span>  while the nodes identifies the  <span style="color:#CC0000">subject</span>  and the  <span style="color:#6AA84F">object</span>  of the declarative statement
 
-<span style="color:#6AA84F"> _“_ </span>  <span style="color:#6AA84F"> _What is a datum and how it can be represented computationally_ </span>  <span style="color:#6AA84F"> _”_ </span>
+![](assets/images/entity.jpg)
 
 ## Same data, in tabular form
 
-| Identifier | First name |
-| :-: | :-: |
-| Entity 1 | “Silvio” |
-
-| Identifier | Title | Created by |
-| :-: | :-: | :-: |
-| Entity 2 | “What is a datum…”  | Entity 1 |
+![](assets/images/tablular.jpg)
 
 ## Attributes and relations
 
 As anticipated\, each datum can be of two different types depending on the kind of  <span style="color:#6AA84F">object</span> :
 
-__Attribute__ : associating a literal \(a string\, a number\, etc\.\,  _underlined_ \) to a subject entity <span style="color:#CC0000">Entity 1</span>   <span style="color:#3C78D8">has given name</span>   <span style="color:#6AA84F"> _“Silvio”_ </span>
+1. __Attribute__ : associating a literal \(a string\, a number\, etc\.\,  _underlined_ \) to a subject entity <span style="color:#CC0000">Entity 1</span>   <span style="color:#3C78D8">has given name</span>   <span style="color:#6AA84F"> _“Silvio”_ </span>
 
-__Relation__ : a labelled link between two entities <span style="color:#CC0000">Entity 2</span>   <span style="color:#3C78D8">was created by</span>   <span style="color:#6AA84F">Entity 1</span>
+2. __Relation__ : a labelled link between two entities <span style="color:#CC0000">Entity 2</span>   <span style="color:#3C78D8">was created by</span>   <span style="color:#6AA84F">Entity 1</span>
 
 The object \(i\.e\. the node in the graph\) specified as an attribute of an entity cannot be reused in other data \(i\.e\. involved by more than one edge\)
 
@@ -59,9 +53,7 @@ However\, it is possible to have two distinct objects of two attributes that sha
 
 ## Attributes and relations: an example
 
-Different objects sharing the same value
-
-Same object involved in two datum
+![](assets/images/relations.jpg)
 
 ## Characteristics of attributes
 
@@ -69,42 +61,34 @@ Same object involved in two datum
 
 <span style="color:#595959">It is reasonable that the attribute of an entity can have the same value of an attribute of another entity\, even when the same predicate is used \(e\.g\. </span>  <span style="color:#3C78D8">was born</span>  <span style="color:#595959"> in the previous example\)</span>
 
-<span style="color:#595959">There exists people born the same day</span>
-
-<span style="color:#595959">There exists people having the same given name</span>
-
-<span style="color:#595959">…</span>
+- <span style="color:#595959">There exists people born the same day</span>
+- <span style="color:#595959">There exists people having the same given name</span>
+- <span style="color:#595959">…</span>
 
 <span style="color:#595959">However\, modifying the value of a certain attribute affects only the entity to which the attribute is associated</span>
 
 ## Alternatives to express data
 
-Two entities that have the same name \(i\.e\. same value\)
-
-Two entities that share exactly the same name \(expressed as an entity\)
+![](assets/images/alternatives.jpg)
 
 ## It is important to express data correctly to avoid issues, but the right way depends on the context
 
 ## Some hints
 
-Each entity in a collection is uniquely identified by an identifier that can be explicitly defined \(for instance\, in databases\, it is known as  _[primary key](https://en.wikipedia.org/wiki/Primary_key)_ \) or implicit \(as in the example in the table presented at the beginning of this lecture\)
-
-When an object of a statement refers to a thing that\, potentially\, can be involved in other data \(as either a subject or an object\)\, then it should be described as an entity and not as a literal
-
-When defining a collection of data\, it is necessary to use a predicate in the same way \(i\.e\. either to associate attributes or to define relations\)
-
-Avoid to use two distinct predicates to convey the same semantics
+1. Each entity in a collection is uniquely identified by an identifier that can be explicitly defined \(for instance\, in databases\, it is known as  _[primary key](https://en.wikipedia.org/wiki/Primary_key)_ \) or implicit \(as in the example in the table presented at the beginning of this lecture\)
+2. When an object of a statement refers to a thing that\, potentially\, can be involved in other data \(as either a subject or an object\)\, then it should be described as an entity and not as a literal
+3. When defining a collection of data\, it is necessary to use a predicate in the same way \(i\.e\. either to associate attributes or to define relations\)
+4. Avoid to use two distinct predicates to convey the same semantics
 
 ## Laboratory
 
 Material:
 
-An A4 sheet of paper
-
-A pen
+- An A4 sheet of paper
+- A pen
 
 \(alternatively\,  _[https://www\.yworks\.com/yed\-live/](https://www.yworks.com/yed-live/)_  or similar\)
 
 Create a graph that describes the following scenario:
 
-_The article _  _entitled_  _ “OpenCitations\, an infrastructure organization for open scholarship” was published by the _  _journal_  _ Quantitative Science Studies in 2020\. The authors of this article\, i\.e\. Silvio Peroni and David Shotton\, also co\-authored another conference paper entitled “The SPAR Ontologies”\, that was published in the Proceedings of the Seventeenth International Semantic Web Conference\, in 2018\._
+_The article entitled “OpenCitations\, an infrastructure organization for open scholarship” was published by the journal Quantitative Science Studies in 2020\. The authors of this article\, i\.e\. Silvio Peroni and David Shotton\, also co\-authored another conference paper entitled “The SPAR Ontologies”\, that was published in the Proceedings of the Seventeenth International Semantic Web Conference\, in 2018\._

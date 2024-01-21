@@ -131,7 +131,9 @@ You need to have Python installed to running Jupyter – you can find instructio
 
 To install JupyterLab\, you can use the command pip as follows:
 
-__pip install jupyterlab__
+```
+pip install jupyterlab
+```
 
 It will be used for all the hands\-on sessions\, thus be sure to have it available on your computer\, and the website includes a very good documentation\, while a lot of tutorials are  _[available online](https://www.youtube.com/watch?v=7wfPqAyYADY)_
 
