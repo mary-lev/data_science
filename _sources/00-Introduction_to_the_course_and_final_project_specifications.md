@@ -74,10 +74,11 @@ A very introductory guide to GitHub can be find  _[online](https://docs.google.c
 
 ## Course calendar
 
-All lectures 12:30 \- 14:30\,  <span style="color:#990000">lectures in red</span> \,  <span style="color:#0B5394">hands\-on in blue</span>
+All lectures 12:30 - 14:30,  <span style="color:#990000">lectures in red</span>, <span style="color:#0B5394">hands-on in blue</span>
 
-| 03/02/2023 | <span style="color:#990000">What is a datum and how it can be represented computationally</span> | 22/02/2023 | <span style="color:#0B5394">Configuring and populating a relational database</span> |
+| Date | Topic | Date | Topic |
 | -------- | --------- | -------- | --------- |
+| 03/02/2023 | <span style="color:#990000">What is a datum and how it can be represented computationally</span> | 22/02/2023 | <span style="color:#0B5394">Configuring and populating a relational database</span> |
 | 06/02/2023 | <span style="color:#0B5394">Data formats and methods for storing data in Python</span> | 24/02/2023 | <span style="color:#990000">SQL, a query language for relational databases</span> |
 | 08/02/2023 | <span style="color:#990000">Introduction to data modelling</span> | 27/02/2023 | <span style="color:#0B5394">Configuring and populating a graph database</span> |
 | 10/02/2023 | <span style="color:#0B5394">Implementation of data models via Python classes</span> | 01/03/2023 | <span style="color:#990000">SPARQL, a query language for RDF databases</span> |

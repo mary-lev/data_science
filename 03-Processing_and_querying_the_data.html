@@ -1,0 +1,725 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>6. Processing and querying the data &#8212; Data Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-E6W9FJFWE8"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-E6W9FJFWE8');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '03-Processing_and_querying_the_data';</script>
+    <link rel="canonical" href="python2024/03-Processing_and_querying_the_data.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="README.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Data Science - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Data Science - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="README.html">
+                    Data Science
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="00-Introduction_to_the_course_and_final_project_specifications.html">1. Introduction to the course and final project specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-What_is_a_datum_and_how_it_can_be_represented_computationally.html">2. What is a datum and how it can be represented computationally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-Data_formats_and_methods_for_storing_data_in_Python.html">3. Data formats and methods for storing data in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-Implementation_of_data_models_via_Python_classes.html">5. Implementation of data models via Python classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-Introduction_to_Pandas.html">7. Introduction to Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-Configuring_and_populating_a_relational_database.html">9. Configuring and populating a relational database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-Configuring_and_populating_a_graph_database.html">11. Configuring and populating a graph database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-Interacting_with_databases_using_Pandas.html">13. Interacting with databases using Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-Descriptive_statistics_and_graphs_about_data_using_Pandas.html">15. Descriptive statistics and graphs about data using Pandas</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/mary-lev/data_science" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/03-Processing_and_querying_the_data.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>6. Processing and querying the data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">6. Processing and querying the data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-the-previous-lectures">Summary of the previous lectures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relationships-between-model-and-data">Relationships between model and data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#querying-data-according-to-their-structure">Querying data according to their structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structured-as-tables">Data structured as tables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sketch-of-the-resolution-of-complex-query-in-tables">Sketch of the resolution of complex query in tables</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-query-resolution-example">Table query resolution: example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structured-as-graphs">Data structured as graphs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sketch-of-the-resolution-of-the-query-in-graph">Sketch of the resolution of the query in graph</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-query-resolution-example">Graph query resolution: example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-away">Take away</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="processing-and-querying-the-data">
+<h1>6. Processing and querying the data<a class="headerlink" href="#processing-and-querying-the-data" title="Permalink to this heading">#</a></h1>
+<section id="summary-of-the-previous-lectures">
+<h2>Summary of the previous lectures<a class="headerlink" href="#summary-of-the-previous-lectures" title="Permalink to this heading">#</a></h2>
+<p>A datum is a declarative statement  <span style="color:#CC0000">subject</span> - <span style="color:#3C78D8">predicate</span> - <span style="color:#6AA84F">object</span>  that, through the  <span style="color:#3C78D8">predicate</span> , either  <strong>attributes</strong>  a  <span style="color:#6AA84F"> <strong>literal</strong> </span>  (i.e. a value such as a string, a number, etc.) to a  <span style="color:#CC0000">subject </span>  <span style="color:#CC0000"> <strong>entity</strong> </span>  <span style="color:#CC0000"> </span>  <em>or</em>  it  <strong>relates</strong>  such a  <span style="color:#CC0000">subject </span>  <span style="color:#CC0000"> <strong>entity</strong> </span>  with  <span style="color:#6AA84F">another </span>  <span style="color:#6AA84F"> <strong>entity</strong> </span></p>
+<p>Each entity, being used either as  <span style="color:#CC0000">subject</span>  or  <span style="color:#6AA84F">object</span>  of a statement, is characterised by  <strong>a unique identifier</strong></p>
+<p>The  <strong>same entity</strong>  can be used as  <span style="color:#CC0000">subject</span>  or  <span style="color:#6AA84F">object</span>  in one or more data, while a literal  <strong>cannot be used</strong>  as  <span style="color:#CC0000">subject</span>  in any datum</p>
+<p>An attribute is intrinsically  <strong>part of</strong>  the  <span style="color:#CC0000">entity</span>  to which it is associated – modifying the value of an attribute affect  <strong>only</strong>  the  <span style="color:#CC0000">entity</span>  to which it refers to</p>
+<p>A data model is an abstract, simplified and formal representation of some data related to a system or a real domain, and enables us to describe what a data collection is about and to check data correctness</p>
+<p>A data model permit one to specify classes of entities, their attributes and relations</p>
+</section>
+<section id="relationships-between-model-and-data">
+<h2>Relationships between model and data<a class="headerlink" href="#relationships-between-model-and-data" title="Permalink to this heading">#</a></h2>
+<p><img alt="" src="_images/03-Processing_and_querying_the_data2.png" /></p>
+<p><span style="color:#3C78D8">publicationVenue</span></p>
+<p><span style="color:#6AA84F"> <em>“10.1016/s1367-5931(02)00332-0”</em> </span></p>
+<p><span style="color:#6AA84F"> <em>“</em> </span>  <span style="color:#6AA84F"> <em>In vitro selection as a powerful tool for the applied evolution of proteins and peptides</em> </span>  <span style="color:#6AA84F"> <em>”</em> </span></p>
+<p><span style="color:#6AA84F"> <em>“</em> </span>  <span style="color:#6AA84F"> <em>Current Opinion in Chemical Biology</em> </span>  <span style="color:#6AA84F"> <em>”</em> </span></p>
+</section>
+<section id="querying-data-according-to-their-structure">
+<h2>Querying data according to their structure<a class="headerlink" href="#querying-data-according-to-their-structure" title="Permalink to this heading">#</a></h2>
+<p>As we anticipated, data always define graphs of entities related to each other or having attributes specified</p>
+<p>However, often data are actually represented by formats that force a particular kind of structure, a structure that obliges one to write a query for assessing data according to the particular data structure in consideration (graph, tree, table, etc.)</p>
+<p>In this lecture we provide the intuition on how to deal with the same query depending on the format we are considering to store the data mentioned in the previous slide</p>
+<p>Queries (in natural language):</p>
+<p><span style="color:#BF9000">Return the title of the publication with DOI  “10.1016/s1367-5931(02)00332-0”</span></p>
+<p><span style="color:#BF9000">Return the name of the venue of the publication with DOI “10.1016/s1367-5931(02)00332-0”</span></p>
+</section>
+<section id="data-structured-as-tables">
+<h2>Data structured as tables<a class="headerlink" href="#data-structured-as-tables" title="Permalink to this heading">#</a></h2>
+<p>As mentioned in the previous lecture, usually the data referring to the same class are handled within one table (e.g. the table Publication listed below)</p>
+<p>When dealing with a query, you can access only one table to retrieve the answer of such a query – of course, if the answer is included there, then you finished, as in the case of the query  <span style="color:#BF9000">r</span>  <span style="color:#BF9000">eturn the title of the publication with DOI “10.1016/s1367-5931(02)00332-0”</span></p>
+<p>However, sometimes, gathering the answer is possible only after we analyse two or more tables simultaneously, since we need to have a larger view of our data to retrieve the correct information, e.g. for the query  <span style="color:#BF9000">r</span>  <span style="color:#BF9000">eturn the name of the venue of the publication with DOI “10.1016/s1367-5931(02)00332-0” </span> where we must access both Publication and Venue table to retrieve the answer</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>internalId</p></th>
+<th class="head text-center"><p>doi</p></th>
+<th class="head text-center"><p>title</p></th>
+<th class="head text-center"><p>publicationYear</p></th>
+<th class="head text-center"><p>publicationVenue</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Entity 1</p></td>
+<td class="text-center"><p>“10.1016/s1367-5931(02)00332-0”</p></td>
+<td class="text-center"><p>“In vitro selection…”</p></td>
+<td class="text-center"><p>2002</p></td>
+<td class="text-center"><p>Entity 2</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="sketch-of-the-resolution-of-complex-query-in-tables">
+<h2>Sketch of the resolution of complex query in tables<a class="headerlink" href="#sketch-of-the-resolution-of-complex-query-in-tables" title="Permalink to this heading">#</a></h2>
+<p>Query:  <span style="color:#BF9000">return the name of the venue of the publication with DOI “10.1016/s1367-5931(02)00332-0”</span></p>
+<p>To answer the query above that involves two or more table, join all the tables that are necessary to come to the answer into one (virtual) bigger table containing all the information</p>
+<p><span style="color:#CC0000">Join via B and D</span></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>A</p></th>
+<th class="head text-center"><p>B</p></th>
+<th class="head text-center"><p>C</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>X1</p></td>
+<td class="text-center"><p>Y1</p></td>
+<td class="text-center"><p>W1</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>X2</p></td>
+<td class="text-center"><p>Y2</p></td>
+<td class="text-center"><p>W2</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>X3</p></td>
+<td class="text-center"><p>Y1</p></td>
+<td class="text-center"><p>W3</p></td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>D</p></th>
+<th class="head text-center"><p>E</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Y1</p></td>
+<td class="text-center"><p>Z1</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Y2</p></td>
+<td class="text-center"><p>Z2</p></td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>A</p></th>
+<th class="head text-center"><p>B</p></th>
+<th class="head text-center"><p>C</p></th>
+<th class="head text-center"><p>D</p></th>
+<th class="head text-center"><p>E</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>X1</p></td>
+<td class="text-center"><p>Y1</p></td>
+<td class="text-center"><p>W1</p></td>
+<td class="text-center"><p>Y1</p></td>
+<td class="text-center"><p>Z1</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>X2</p></td>
+<td class="text-center"><p>Y2</p></td>
+<td class="text-center"><p>W2</p></td>
+<td class="text-center"><p>Y2</p></td>
+<td class="text-center"><p>Z2</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>X3</p></td>
+<td class="text-center"><p>Y1</p></td>
+<td class="text-center"><p>W3</p></td>
+<td class="text-center"><p>Y1</p></td>
+<td class="text-center"><p>Z1</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<p>__Query: __  <span style="color:#BF9000">return the name of the venue of the publication with DOI “10.1016/s1367-5931(02)00332-0”</span></p>
+<section id="table-query-resolution-example">
+<h2>Table query resolution: example<a class="headerlink" href="#table-query-resolution-example" title="Permalink to this heading">#</a></h2>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>internalId</p></th>
+<th class="head text-center"><p>doi</p></th>
+<th class="head text-center"><p>title</p></th>
+<th class="head text-center"><p>publicationYear</p></th>
+<th class="head text-center"><p>publicationVenue</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Entity 1</p></td>
+<td class="text-center"><p>“10.1016/s1367-5931(02)00332-0”</p></td>
+<td class="text-center"><p>“In vitro selection…”</p></td>
+<td class="text-center"><p>2002</p></td>
+<td class="text-center"><p>Entity 2</p></td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>internalId</p></th>
+<th class="head text-center"><p>id</p></th>
+<th class="head text-center"><p>name</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Entity 2</p></td>
+<td class="text-center"><p>“1367-5931”</p></td>
+<td class="text-center"><p>“Current Opinion…”</p></td>
+</tr>
+</tbody>
+</table>
+<p><span style="color:#3C78D8"> <strong>Publication JOIN Venue</strong> </span></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>P.<br />internalId</p></th>
+<th class="head text-center"><p>doi</p></th>
+<th class="head text-center"><p>title</p></th>
+<th class="head text-center"><p>publicationYear</p></th>
+<th class="head text-center"><p>publicationVenue</p></th>
+<th class="head text-center"><p>V.internalId</p></th>
+<th class="head text-center"><p>id</p></th>
+<th class="head text-center"><p>name</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Entity 1</p></td>
+<td class="text-center"><p>“10.1016/s1367-5931(02)00332-0”</p></td>
+<td class="text-center"><p>“In vitro…”</p></td>
+<td class="text-center"><p>2002</p></td>
+<td class="text-center"><p>Entity 2</p></td>
+<td class="text-center"><p>Entity 2</p></td>
+<td class="text-center"><p>“1367-5931”</p></td>
+<td class="text-center"><p>“Current…”</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="data-structured-as-graphs">
+<h2>Data structured as graphs<a class="headerlink" href="#data-structured-as-graphs" title="Permalink to this heading">#</a></h2>
+<p>Graphs are more flexible as a data structure since they are not tied to a particular tabular organisation, and are easy to extend if new requirements are introduced in the data model</p>
+<p>For instance, if we structure a data model according to a tabular format, the addition of one attribute of a given class results in rethinking entirely the table referring to that class – and some times, it requires the creation of new tables that must be interlinked, somehow, with the existing ones</p>
+<p>Using graph-based formats for defining data, the extension of a data model is handled simply by adding additional edges and nodes, without changing the implicit structure of how data are organised</p>
+<p>In addition, the gathering of an answer for a given query is performed by browsing the components of the graph, following the existing paths between nodes to reach the components representing the answer of a given query</p>
+</section>
+<section id="sketch-of-the-resolution-of-the-query-in-graph">
+<h2>Sketch of the resolution of the query in graph<a class="headerlink" href="#sketch-of-the-resolution-of-the-query-in-graph" title="Permalink to this heading">#</a></h2>
+<p><span style="color:#CC0000">[?1]</span>   <span style="color:#3D85C6">j</span>   <span style="color:#6AA84F">B</span>  +  <span style="color:#CC0000">[?1]</span>   <span style="color:#3D85C6">i</span>   <span style="color:#6AA84F">[?2]</span>  +  <span style="color:#CC0000">[?2]</span>   <span style="color:#3D85C6">k</span>   <span style="color:#6AA84F"> <em>y</em> </span></p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id2">
+<h1><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h1>
+<p>__Query: __  <span style="color:#BF9000">return the name of the venue of the publication with DOI “10.1016/s1367-5931(02)00332-0”</span></p>
+<section id="graph-query-resolution-example">
+<h2>Graph query resolution: example<a class="headerlink" href="#graph-query-resolution-example" title="Permalink to this heading">#</a></h2>
+<p><img alt="" src="_images/03-Processing_and_querying_the_data3.png" /></p>
+<p><span style="color:#3C78D8">publicationVenue</span></p>
+<p><span style="color:#6AA84F"> <em>“10.1016/s1367-5931(02)00332-0”</em> </span></p>
+<p><span style="color:#6AA84F"> <em>“In vitro selection as a powerful tool for the applied evolution of proteins and peptides”</em> </span></p>
+<p><span style="color:#6AA84F"> <em>“Current Opinion in Chemical Biology”</em> </span></p>
+</section>
+<section id="take-away">
+<h2>Take away<a class="headerlink" href="#take-away" title="Permalink to this heading">#</a></h2>
+<p>Depending on the structure in which data are stored (or exposed), you need to approach the queries from a different angle</p>
+<p>When you have tabular data, often you have to combine tables between them to obtain bigger (virtual) tables which contain the answer to a query</p>
+<p>When you have graph data, you explore the graph starting from “fixed” points (i.e. known entities, values, predicates) to find a pattern that is compliant with the query</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "mary-lev/data_science",
+            ref: "gh-pages",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">6. Processing and querying the data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-the-previous-lectures">Summary of the previous lectures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relationships-between-model-and-data">Relationships between model and data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#querying-data-according-to-their-structure">Querying data according to their structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structured-as-tables">Data structured as tables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sketch-of-the-resolution-of-complex-query-in-tables">Sketch of the resolution of complex query in tables</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-query-resolution-example">Table query resolution: example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structured-as-graphs">Data structured as graphs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sketch-of-the-resolution-of-the-query-in-graph">Sketch of the resolution of the query in graph</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-query-resolution-example">Graph query resolution: example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-away">Take away</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Prof. Silvio Peroni
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
