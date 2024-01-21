@@ -44,6 +44,7 @@ html:
   use_repository_button: true
   extra_navbar: <a href="https://www.unibo.it/sitoweb/silvio.peroni/en">Silvio Peroni</a>  # Will be displayed underneath the left navbar.
   baseurl: python2024
+  google_analytics_id: G-E6W9FJFWE8
 
 sphinx:
   config:
