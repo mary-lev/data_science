@@ -1,4 +1,4 @@
-# Introduction to the course and final project specifications
+# 1. Introduction to the course and final project specifications
 
 A preliminary introduction to the basic tools that enable you to start a Data Science project
 (and get the final score for the integrated course “Computational Management of Data”)
@@ -88,10 +88,9 @@ All lectures 12:30 \- 14:30\,  <span style="color:#990000">lectures in red</span
 
 ## Exam
 
-The exam consists of
-
-- the implementation of a project – yes\, you have to write a software\, and the specifications will be introduced today
-- an oral colloquium on the project implemented\, for assessing the contribution of each student
+- The exam consists of
+    - the implementation of a project – yes\, you have to write a software\, and the specifications will be introduced today
+    - an oral colloquium on the project implemented\, for assessing the contribution of each student
 - It will be assigned maximum 16 points for the correctness of the project – I will run a series of tests aiming at assessing all the code developed
 - The points above are assigned to all the students that have worked to the project
 - Other 16 points \(maximum\) will be assigned to each individual student as result of the oral colloquium
@@ -99,7 +98,7 @@ The exam consists of
 ## Groups
 
 - You have to organise in groups
-- 3\-4 people \(not less\, not more\)
+    - 3\-4 people \(not less\, not more\)
 - You have to choose a name for the group \(please\, be creative\)
 - Before the next lecture\, I will post a link on Slack to subscribe your group
 - I would strongly suggest to split the work\, so as to have a reasonable amount of code to implement
@@ -183,5 +182,3 @@ I strongly suggest you to systematically adopt this development technique for de
 In addition\, there is at least a Python library available which has been entirely developed to facilitate the creation of tests\, i\.e\.  _[unittest](https://docs.python.org/3/library/unittest.html)_
 
 Online\, you can find several documents describing how to create tests in Python\, such as  _[one at the Real Python website](https://realpython.com/python-testing/)_
-
-## End
