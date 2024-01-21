@@ -443,7 +443,7 @@ document.write(`
 <section id="from-a-diagram-to-tables">
 <h2>From a diagram to tables<a class="headerlink" href="#from-a-diagram-to-tables" title="Permalink to this heading">#</a></h2>
 <p>Before starting populating the database, it is necessary to create the appropriate tables that enable the description of all the entities (and related data) we need. In order to understand what to do, it is important to look at the UML diagram describing the data model introduced in a previous tutorial.</p>
-<p><img alt="UML diagram of a data model" src="../02/uml.png" /></p>
+<p><img alt="UML diagram of a data model" src="_images/uml.png" /></p>
 <p>There are different strategies that we can follow to crete the tables describing a data model such as that deiscribed above. For instance, we can approach such a translation as follows:</p>
 <ul class="simple">
 <li><p>Create a table for each class which does not have any subclass (i.e. the most concrete classes), by using as columns all single-valued attributes and relations defined in such a class and all its superclasses. Concretely, we create four tables, i.e. for <code class="docutils literal notranslate"><span class="pre">JournalArticle</span></code> and <code class="docutils literal notranslate"><span class="pre">BookChapter</span></code> (which inherit all the attributes and relations of <code class="docutils literal notranslate"><span class="pre">Publication</span></code>), and <code class="docutils literal notranslate"><span class="pre">Journal</span></code> and <code class="docutils literal notranslate"><span class="pre">Book</span></code> (which inherit all the attributes and relations of <code class="docutils literal notranslate"><span class="pre">Venue</span></code>).</p></li>
@@ -452,7 +452,7 @@ document.write(`
 <li><p>Create a two column table, where the first column enables the identification of an internal identifier of an entity specified in the other tables, for each multivalued attribute or relation in the diagram. In the example, only the attribute <code class="docutils literal notranslate"><span class="pre">id</span></code> of the class <code class="docutils literal notranslate"><span class="pre">Venue</span></code> is multivalued, and thus an additional table <code class="docutils literal notranslate"><span class="pre">VenueId</span></code> is created to link a <code class="docutils literal notranslate"><span class="pre">Venue</span></code> entity with one or more identifiers characterising it.</p></li>
 </ul>
 <p>A possible translation of the UML diagram above following the rules just mentioned is shown as follows:</p>
-<p><img alt="tables to represent the data model mentioned above" src="../04/tables.png" /></p>
+<p><img alt="tables to represent the data model mentioned above" src="_images/tables.png" /></p>
 <p>It is worth mentioning that this is not the only possible way to translate the original UML data mode, and other paths can be followed to this respect.</p>
 </section>
 <section id="how-to-create-and-populate-a-table-with-pandas">

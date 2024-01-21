@@ -4,16 +4,6 @@ This space contains all the material related to the [Data Science course](https:
 
 ## Academic year 2023/2024
 
-### Table of content
-
-- [Data Science](#data-science)
-  - [Academic year 2023/2024](#academic-year-20232024)
-    - [Table of content](#table-of-content)
-    - [Material](#material)
-    - [Schedule](#schedule)
-  - [Links](#links)
-
-
 ### Material
 
 **Keys:**
