@@ -24,7 +24,7 @@ or
 Examples:
 
 - <span style="color:#CC0000">Entity 1</span>   <span style="color:#3C78D8">is a</span>   <span style="color:#6AA84F">Person</span>
-- <span style="color:#CC0000">Entity 1</span>   <span style="color:#3C78D8">has given name</span>   <span style="color:#6AA84F"> _“Silvio”_ </span>
+- <span style="color:#CC0000">Entity 1</span>   <span style="color:#3C78D8">has given name</span>   _<span style="color:#6AA84F">“Silvio”</span>_
 - <span style="color:#CC0000">Entity 2</span>   <span style="color:#3C78D8">is a</span>   <span style="color:#6AA84F">Document</span>
 - <span style="color:#CC0000">Entity 2</span>   <span style="color:#3C78D8">has title</span>   <span style="color:#6AA84F"> _“What is a datum and how it can be represented computationally”_ </span>
 - <span style="color:#CC0000">Entity 2</span>   <span style="color:#3C78D8">was created by</span>   <span style="color:#6AA84F">Entity 1</span>
