@@ -233,24 +233,6 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/mary-lev/data_science/gh-pages?urlpath=tree/_sources/02-Implementation_of_data_models_via_Python_classes.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="_static/images/logo_binder.svg">
-  </span>
-<span class="btn__text-container">Binder</span>
-</a>
-</li>
-      
-      
-      
-      
       <li><a href="https://colab.research.google.com/github/mary-lev/data_science/blob/gh-pages/_sources/02-Implementation_of_data_models_via_Python_classes.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
@@ -264,6 +246,24 @@ const thebe_selector_output = ".output, .cell_output"
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
 </li>
       
   </ul>
@@ -477,7 +477,7 @@ document.write(`
 </section>
 <section id="instantiating-a-class">
 <h3>Instantiating a class<a class="headerlink" href="#instantiating-a-class" title="Permalink to this heading">#</a></h3>
-<p>Once classes are defined, we can use them to instantiate objects of that kind. For doing it, we should call their constructor (using the name of the class) passing the parameters it requires <strong>except</strong> <code class="docutils literal notranslate"><span class="pre">self</span></code>, that will be implicitly considered. In practice, for creating a new object of class <code class="docutils literal notranslate"><span class="pre">Venue</span></code>, we need to specify only two parameters, i.e. those for <code class="docutils literal notranslate"><span class="pre">identifiers</span></code> (i.e. a collection of strings) and <code class="docutils literal notranslate"><span class="pre">name</span></code> (i.e. a string). As an example, let us consider again the first two items of the <span class="xref myst">venues CSV file</span> we have introduced in the previous tutorial, i.e.:</p>
+<p>Once classes are defined, we can use them to instantiate objects of that kind. For doing it, we should call their constructor (using the name of the class) passing the parameters it requires <strong>except</strong> <code class="docutils literal notranslate"><span class="pre">self</span></code>, that will be implicitly considered. In practice, for creating a new object of class <code class="docutils literal notranslate"><span class="pre">Venue</span></code>, we need to specify only two parameters, i.e. those for <code class="docutils literal notranslate"><span class="pre">identifiers</span></code> (i.e. a collection of strings) and <code class="docutils literal notranslate"><span class="pre">name</span></code> (i.e. a string). As an example, let us consider again the first two items of the <a class="reference download internal" download="" href="_downloads/4aa59df752b73d2cbdf70c6251169020/01-venues.csv"><span class="xref download myst">venues CSV file</span></a> we have introduced in the previous tutorial, i.e.:</p>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>id</p></th>
@@ -521,12 +521,12 @@ document.write(`
 Indeed, the types of the two objects are both &lt;class &#39;__main__.Venue&#39;&gt;
 
 The objects in &#39;value_1&#39; and &#39;value_2&#39; are the same object --&gt; False
-Indeed, the integers identifying the two objects are 140152449400736 and 140152449400112 respectively
+Indeed, the integers identifying the two objects are 140166117047552 and 140166117047744 respectively
 </pre></div>
 </div>
 </div>
 </div>
-<p>Similarly, we can create new objects also of other classes, such as <code class="docutils literal notranslate"><span class="pre">Publication</span></code>. In this case, the last parameter of the constructor of <code class="docutils literal notranslate"><span class="pre">Publication</span></code> (i.e. <code class="docutils literal notranslate"><span class="pre">publicationVenue</span></code>) should take in input an object having class <code class="docutils literal notranslate"><span class="pre">Venue</span></code> as defined above. As another example, let us consider again the first two items of the <span class="xref myst">publications CSV file</span> we have introduced in the previous tutorial, i.e.:</p>
+<p>Similarly, we can create new objects also of other classes, such as <code class="docutils literal notranslate"><span class="pre">Publication</span></code>. In this case, the last parameter of the constructor of <code class="docutils literal notranslate"><span class="pre">Publication</span></code> (i.e. <code class="docutils literal notranslate"><span class="pre">publicationVenue</span></code>) should take in input an object having class <code class="docutils literal notranslate"><span class="pre">Venue</span></code> as defined above. As another example, let us consider again the first two items of the <a class="reference download internal" download="" href="_downloads/1a2bcaadfb618052c19b16227dd92a7a/01-publications.csv"><span class="xref download myst">publications CSV file</span></a> we have introduced in the previous tutorial, i.e.:</p>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>doi</p></th>
@@ -879,8 +879,8 @@ Development of Computational Tools for the Inference of Protein Interaction Spec
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
+            repo: "mary-lev/data_science",
+            ref: "gh-pages",
         },
         codeMirrorConfig: {
             theme: "abcdef",

@@ -232,24 +232,6 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/mary-lev/data_science/gh-pages?urlpath=tree/_sources/07-Descriptive_statistics_and_graphs_about_data_using_Pandas.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="_static/images/logo_binder.svg">
-  </span>
-<span class="btn__text-container">Binder</span>
-</a>
-</li>
-      
-      
-      
-      
       <li><a href="https://colab.research.google.com/github/mary-lev/data_science/blob/gh-pages/_sources/07-Descriptive_statistics_and_graphs_about_data_using_Pandas.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
@@ -263,6 +245,24 @@ const thebe_selector_output = ".output, .cell_output"
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
 </li>
       
   </ul>
@@ -408,12 +408,12 @@ document.write(`
 <p>In this tutorial, we show how to use Pandas to calculate basic statistics of a dataset and show figures using automatically-generated graphs.</p>
 <section id="what-data-are-about">
 <h2>What data are about<a class="headerlink" href="#what-data-are-about" title="Permalink to this heading">#</a></h2>
-<p>When you receive a new dataset (such as <span class="xref myst">the one included in this tutorial</span>), the first you have to do is to analyse it to understand what its data are about, how they have been organised, what is the type of each column, and whether there are any <em>null</em> object included in it (e.g. empty cells). In a previous tutorial, we have used an input parameter specified on the function <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> (i.e. <code class="docutils literal notranslate"><span class="pre">keep_default_na</span></code> set to <code class="docutils literal notranslate"><span class="pre">False</span></code>) to rewrite empty cell values as empty strings (i.e. <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>). However, by doing so, we may miss some relevant information about the dataset that we should know from the beginning. Let us see it practically with an example, using the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.info.html">method <code class="docutils literal notranslate"><span class="pre">info</span></code></a> that enables us to have a summary of the data frame:</p>
+<p>When you receive a new dataset (such as <a class="reference download internal" download="" href="_downloads/77842723b8b2550d2a83fde025177f1f/07-publications.csv"><span class="xref download myst">the one included in this tutorial</span></a>), the first you have to do is to analyse it to understand what its data are about, how they have been organised, what is the type of each column, and whether there are any <em>null</em> object included in it (e.g. empty cells). In a previous tutorial, we have used an input parameter specified on the function <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> (i.e. <code class="docutils literal notranslate"><span class="pre">keep_default_na</span></code> set to <code class="docutils literal notranslate"><span class="pre">False</span></code>) to rewrite empty cell values as empty strings (i.e. <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>). However, by doing so, we may miss some relevant information about the dataset that we should know from the beginning. Let us see it practically with an example, using the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.info.html">method <code class="docutils literal notranslate"><span class="pre">info</span></code></a> that enables us to have a summary of the data frame:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">read_csv</span>
 
-<span class="n">publications</span> <span class="o">=</span> <span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;07-publications.csv&quot;</span><span class="p">,</span> <span class="n">keep_default_na</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">publications</span> <span class="o">=</span> <span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;assets/data/07-publications.csv&quot;</span><span class="p">,</span> <span class="n">keep_default_na</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">publications</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -423,7 +423,7 @@ document.write(`
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">read_csv</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">publications</span> <span class="o">=</span> <span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;07-publications.csv&quot;</span><span class="p">,</span> <span class="n">keep_default_na</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">publications</span> <span class="o">=</span> <span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;assets/data/07-publications.csv&quot;</span><span class="p">,</span> <span class="n">keep_default_na</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">publications</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 
 <span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
@@ -435,7 +435,7 @@ document.write(`
 <p>Thus, as a suggestion, when you approach for the very first time a dataset using Pandas, leave the system use its own favourite ways to handle situations (such as empty cells) and observe what this may mean. The following code show the same description reported above leaving the system to handle empty cells as it prefers:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">publications</span> <span class="o">=</span> <span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;07-publications.csv&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">publications</span> <span class="o">=</span> <span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;assets/data/07-publications.csv&quot;</span><span class="p">)</span>
 <span class="n">publications</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -444,7 +444,7 @@ document.write(`
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">publications</span> <span class="o">=</span> <span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;07-publications.csv&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">publications</span> <span class="o">=</span> <span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;assets/data/07-publications.csv&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">publications</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 
 <span class="ne">NameError</span>: name &#39;read_csv&#39; is not defined
@@ -689,8 +689,8 @@ document.write(`
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
+            repo: "mary-lev/data_science",
+            ref: "gh-pages",
         },
         codeMirrorConfig: {
             theme: "abcdef",

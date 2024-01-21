@@ -233,24 +233,6 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/mary-lev/data_science/gh-pages?urlpath=tree/_sources/01-Data_formats_and_methods_for_storing_data_in_Python.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="_static/images/logo_binder.svg">
-  </span>
-<span class="btn__text-container">Binder</span>
-</a>
-</li>
-      
-      
-      
-      
       <li><a href="https://colab.research.google.com/github/mary-lev/data_science/blob/gh-pages/_sources/01-Data_formats_and_methods_for_storing_data_in_Python.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
@@ -264,6 +246,24 @@ const thebe_selector_output = ".output, .cell_output"
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
 </li>
       
   </ul>
@@ -476,13 +476,13 @@ document.write(`
 </tr>
 </tbody>
 </table>
-<p>CSV <span class="xref myst">source</span>:</p>
+<p>CSV <a class="reference download internal" download="" href="_downloads/491b912b91bb51c3b33bd4c242b348f9/01-example.csv"><span class="xref download myst">source</span></a>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">column</span> <span class="n">name</span><span class="p">,</span><span class="s2">&quot;another name, with a comma&quot;</span>
 <span class="n">a</span> <span class="n">value</span><span class="p">,</span><span class="s2">&quot;a value, with a comma&quot;</span>
 <span class="n">a</span> <span class="n">quoted</span> <span class="s2">&quot;value&quot;</span><span class="p">,</span><span class="s2">&quot;a quoted &quot;&quot;value&quot;&quot;, with a comma&quot;</span>
 </pre></div>
 </div>
-<p>Python has a dedicated library to handle this format called <a class="reference external" href="https://docs.python.org/3/library/csv.html"><em>csv</em></a>. In order to understand how to use it, we can start analysing two very simple CSV files, one containing <span class="xref myst">publications and some of their basic metadata</span> and another with <span class="xref myst">information about the venues</span> where such publications have been published. To open it as a source file, you can right-click on it in the left panel and select <em>Open With -&gt; Editor</em>.</p>
+<p>Python has a dedicated library to handle this format called <a class="reference external" href="https://docs.python.org/3/library/csv.html"><em>csv</em></a>. In order to understand how to use it, we can start analysing two very simple CSV files, one containing <a class="reference download internal" download="" href="_downloads/1a2bcaadfb618052c19b16227dd92a7a/01-publications.csv"><span class="xref download myst">publications and some of their basic metadata</span></a> and another with <a class="reference download internal" download="" href="_downloads/4aa59df752b73d2cbdf70c6251169020/01-venues.csv"><span class="xref download myst">information about the venues</span></a> where such publications have been published. To open it as a source file, you can right-click on it in the left panel and select <em>Open With -&gt; Editor</em>.</p>
 <section id="opening-a-csv-file">
 <h3>Opening a CSV file<a class="headerlink" href="#opening-a-csv-file" title="Permalink to this heading">#</a></h3>
 <p>In order to understand how these files are represented in Python, let us try to load one of it into a Python object using the funcion <em>reader</em> included in the module <em>csv</em> mentioned above. For doing that, it is necessary to obtain a <a class="reference external" href="https://docs.python.org/3/glossary.html#term-file-object">file object</a> of a particular file using the built-in <a class="reference external" href="https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files">function <code class="docutils literal notranslate"><span class="pre">open</span></code> used with a <code class="docutils literal notranslate"><span class="pre">with</span></code> statement</a> as shown in the following excerpt:</p>
@@ -1119,7 +1119,7 @@ In vitro selection as a powerful tool for the applied evolution of proteins and 
 </section>
 <section id="it-is-a-list-of-dictionaries">
 <h3>It is a list of dictionaries!<a class="headerlink" href="#it-is-a-list-of-dictionaries" title="Permalink to this heading">#</a></h3>
-<p>Considering the <span class="xref myst">exemplar JSON file</span> we have used in the code above, we can print out on screen the type of the object referred by the <code class="docutils literal notranslate"><span class="pre">json_doc</span></code> variable to see what kind of class it is used to represent such a document, as shown in the following excerpt:</p>
+<p>Considering the <a class="reference download internal" download="" href="_downloads/17c7b8ff57433466180c420ba25da9a3/01-publications-venues.json"><span class="xref download myst">exemplar JSON file</span></a> we have used in the code above, we can print out on screen the type of the object referred by the <code class="docutils literal notranslate"><span class="pre">json_doc</span></code> variable to see what kind of class it is used to represent such a document, as shown in the following excerpt:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">json_doc</span><span class="p">))</span>
@@ -1269,8 +1269,8 @@ In vitro selection as a powerful tool for the applied evolution of proteins and 
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
+            repo: "mary-lev/data_science",
+            ref: "gh-pages",
         },
         codeMirrorConfig: {
             theme: "abcdef",

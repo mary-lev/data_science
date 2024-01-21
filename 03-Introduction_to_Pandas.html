@@ -233,24 +233,6 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/mary-lev/data_science/gh-pages?urlpath=tree/_sources/03-Introduction_to_Pandas.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="_static/images/logo_binder.svg">
-  </span>
-<span class="btn__text-container">Binder</span>
-</a>
-</li>
-      
-      
-      
-      
       <li><a href="https://colab.research.google.com/github/mary-lev/data_science/blob/gh-pages/_sources/03-Introduction_to_Pandas.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
@@ -264,6 +246,24 @@ const thebe_selector_output = ".output, .cell_output"
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
 </li>
       
   </ul>
@@ -686,7 +686,7 @@ document.write(`
 </section>
 <section id="how-to-load-data-into-pandas">
 <h2>How to load data into Pandas<a class="headerlink" href="#how-to-load-data-into-pandas" title="Permalink to this heading">#</a></h2>
-<p>Pandas makes available <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/io.html">several functions</a> to load data stored in different formats. Indeed, there is a particular function that we can use to load data from CSV representations of tabular data (as those introduced in the <span class="xref myst">first tutorial</span>), i.e. the <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html">function <code class="docutils literal notranslate"><span class="pre">read_csv</span></code></a>.</p>
+<p>Pandas makes available <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/io.html">several functions</a> to load data stored in different formats. Indeed, there is a particular function that we can use to load data from CSV representations of tabular data (as those introduced in the <a class="reference internal" href="01-Data_formats_and_methods_for_storing_data_in_Python.html"><span class="doc std std-doc">first tutorial</span></a>), i.e. the <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html">function <code class="docutils literal notranslate"><span class="pre">read_csv</span></code></a>.</p>
 <p>The method <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> takes in input a file path and returns a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> representing such tabular data, as shown as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1046,8 +1046,8 @@ document.write(`
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
+            repo: "mary-lev/data_science",
+            ref: "gh-pages",
         },
         codeMirrorConfig: {
             theme: "abcdef",

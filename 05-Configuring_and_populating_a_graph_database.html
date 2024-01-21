@@ -233,24 +233,6 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/mary-lev/data_science/gh-pages?urlpath=tree/_sources/05-Configuring_and_populating_a_graph_database.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="_static/images/logo_binder.svg">
-  </span>
-<span class="btn__text-container">Binder</span>
-</a>
-</li>
-      
-      
-      
-      
       <li><a href="https://colab.research.google.com/github/mary-lev/data_science/blob/gh-pages/_sources/05-Configuring_and_populating_a_graph_database.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
@@ -264,6 +246,24 @@ const thebe_selector_output = ".output, .cell_output"
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
 </li>
       
   </ul>
@@ -609,7 +609,7 @@ document.write(`
 </div>
 </div>
 <p>Using these classes it is possible to create all the Python objects necessary to create statements describing all the data to be pushed into an RDF graph. We need to use the <a class="reference external" href="https://rdflib.readthedocs.io/en/stable/apidocs/rdflib.html#rdflib.Graph.add">method <code class="docutils literal notranslate"><span class="pre">add</span></code></a> to add a new RDF statement to a graph. Such method takes in input a tuple of three elements defining the subject (an <code class="docutils literal notranslate"><span class="pre">URIRef</span></code>), the predicate (another <code class="docutils literal notranslate"><span class="pre">URIRef</span></code>) and the object (either an <code class="docutils literal notranslate"><span class="pre">URIRef</span></code> or a <code class="docutils literal notranslate"><span class="pre">Literal</span></code>) of the statements.</p>
-<p>The following code show how to populate the RDF graph defining using the data obtained by processing the two CSV documents presented in previous tutorials. i.e. <span class="xref myst">that of the publications</span> and <span class="xref myst">that of the venues</span>. For instance, all the venues are created using the following code:</p>
+<p>The following code show how to populate the RDF graph defining using the data obtained by processing the two CSV documents presented in previous tutorials. i.e. <a class="reference download internal" download="" href="_downloads/1a2bcaadfb618052c19b16227dd92a7a/01-publications.csv"><span class="xref download myst">that of the publications</span></a> and <a class="reference download internal" download="" href="_downloads/4aa59df752b73d2cbdf70c6251169020/01-venues.csv"><span class="xref download myst">that of the venues</span></a>. For instance, all the venues are created using the following code:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">read_csv</span><span class="p">,</span> <span class="n">Series</span>
@@ -826,8 +826,8 @@ document.write(`
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
+            repo: "mary-lev/data_science",
+            ref: "gh-pages",
         },
         codeMirrorConfig: {
             theme: "abcdef",

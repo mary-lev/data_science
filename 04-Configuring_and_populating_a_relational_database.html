@@ -233,24 +233,6 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/mary-lev/data_science/gh-pages?urlpath=tree/_sources/04-Configuring_and_populating_a_relational_database.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="_static/images/logo_binder.svg">
-  </span>
-<span class="btn__text-container">Binder</span>
-</a>
-</li>
-      
-      
-      
-      
       <li><a href="https://colab.research.google.com/github/mary-lev/data_science/blob/gh-pages/_sources/04-Configuring_and_populating_a_relational_database.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
@@ -264,6 +246,24 @@ const thebe_selector_output = ".output, .cell_output"
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
 </li>
       
   </ul>
@@ -460,7 +460,7 @@ document.write(`
 <p>Pandas makes available specific methods that simplify the creation and population of database tables via <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, and that take care also of running some database-related operations such as the <code class="docutils literal notranslate"><span class="pre">commit</span></code> shown above. The main tool to use to push a table into a SQLite database is the <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_sql.html">method <code class="docutils literal notranslate"><span class="pre">to_sql</span></code></a> of the class <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. However, before seen how to use it to populate a database, let us reorganise the original data provided in CSV about publications and venues in a series of Pandas data frames recalling the tabular structures introduced in the previous section.</p>
 <section id="venue-id-table">
 <h3>Venue-Id table<a class="headerlink" href="#venue-id-table" title="Permalink to this heading">#</a></h3>
-<p>Let us start by creating the <code class="docutils literal notranslate"><span class="pre">VenueId</span></code> table. This can be done using one of the columns of the <span class="xref myst">CSV document describing venues</span>, i.e. the column <code class="docutils literal notranslate"><span class="pre">id</span></code>. Thus, we create a new sub-data frame containing only that column and we add an additional column defining the strings referring to the internal identifiers of each venue. The following code shows how to perform all these operations:</p>
+<p>Let us start by creating the <code class="docutils literal notranslate"><span class="pre">VenueId</span></code> table. This can be done using one of the columns of the <a class="reference download internal" download="" href="_downloads/4aa59df752b73d2cbdf70c6251169020/01-venues.csv"><span class="xref download myst">CSV document describing venues</span></a>, i.e. the column <code class="docutils literal notranslate"><span class="pre">id</span></code>. Thus, we create a new sub-data frame containing only that column and we add an additional column defining the strings referring to the internal identifiers of each venue. The following code shows how to perform all these operations:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">read_csv</span><span class="p">,</span> <span class="n">Series</span>
@@ -613,7 +613,7 @@ document.write(`
 </section>
 <section id="tables-for-publications">
 <h3>Tables for publications<a class="headerlink" href="#tables-for-publications" title="Permalink to this heading">#</a></h3>
-<p>Similarly, all the other tables (i.e. <code class="docutils literal notranslate"><span class="pre">JournalArticles</span></code> and <code class="docutils literal notranslate"><span class="pre">BookChapters</span></code>) can be created using the same set of operations, but starting from the <span class="xref myst">CSV document containing publications</span>. First, we create a new column with all the internal identifiers for all publications, as shown as follows:</p>
+<p>Similarly, all the other tables (i.e. <code class="docutils literal notranslate"><span class="pre">JournalArticles</span></code> and <code class="docutils literal notranslate"><span class="pre">BookChapters</span></code>) can be created using the same set of operations, but starting from the <a class="reference download internal" download="" href="_downloads/1a2bcaadfb618052c19b16227dd92a7a/01-publications.csv"><span class="xref download myst">CSV document containing publications</span></a>. First, we create a new column with all the internal identifiers for all publications, as shown as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">publications</span> <span class="o">=</span> <span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../01/01-publications.csv&quot;</span><span class="p">,</span> 
@@ -757,8 +757,8 @@ document.write(`
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
+            repo: "mary-lev/data_science",
+            ref: "gh-pages",
         },
         codeMirrorConfig: {
             theme: "abcdef",
