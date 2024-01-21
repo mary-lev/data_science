@@ -1,10 +1,8 @@
-# Data Science
+# Data Science: Academic year 2023/2024
 
 This space contains all the material related to the [Data Science course](https://www.unibo.it/en/teaching/course-unit-catalogue/course-unit/2023/467046) of the [Digital Humanities and Digital Knowledge degree](https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge) at the [University of Bologna](http://www.unibo.it/en).
 
-## Academic year 2023/2024
-
-### Material
+## Material
 
 **Keys:**
 
