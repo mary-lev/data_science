@@ -428,14 +428,20 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">read_csv</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">publications</span> <span class="o">=</span> <span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;assets/data/07-publications.csv&quot;</span><span class="p">,</span> <span class="n">keep_default_na</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">publications</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 995 entries, 0 to 994
+Data columns (total 7 columns):
+ #   Column             Non-Null Count  Dtype 
+---  ------             --------------  ----- 
+ 0   doi                995 non-null    object
+ 1   title              995 non-null    object
+ 2   publication year   995 non-null    int64 
+ 3   publication venue  995 non-null    object
+ 4   type               995 non-null    object
+ 5   issue              995 non-null    object
+ 6   volume             995 non-null    object
+dtypes: int64(1), object(6)
+memory usage: 54.5+ KB
 </pre></div>
 </div>
 </div>
@@ -450,13 +456,20 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">publications</span> <span class="o">=</span> <span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;assets/data/07-publications.csv&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">publications</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;read_csv&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 995 entries, 0 to 994
+Data columns (total 7 columns):
+ #   Column             Non-Null Count  Dtype 
+---  ------             --------------  ----- 
+ 0   doi                995 non-null    object
+ 1   title              989 non-null    object
+ 2   publication year   995 non-null    int64 
+ 3   publication venue  981 non-null    object
+ 4   type               995 non-null    object
+ 5   issue              505 non-null    object
+ 6   volume             970 non-null    object
+dtypes: int64(1), object(6)
+memory usage: 54.5+ KB
 </pre></div>
 </div>
 </div>
@@ -470,15 +483,147 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">publications</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;publications&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>doi</th>
+      <th>title</th>
+      <th>publication year</th>
+      <th>publication venue</th>
+      <th>type</th>
+      <th>issue</th>
+      <th>volume</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>995</td>
+      <td>989</td>
+      <td>995.000000</td>
+      <td>981</td>
+      <td>995</td>
+      <td>505</td>
+      <td>970</td>
+    </tr>
+    <tr>
+      <th>unique</th>
+      <td>995</td>
+      <td>988</td>
+      <td>NaN</td>
+      <td>392</td>
+      <td>5</td>
+      <td>75</td>
+      <td>279</td>
+    </tr>
+    <tr>
+      <th>top</th>
+      <td>10.1002/cfg.304</td>
+      <td>Transformation toughening</td>
+      <td>NaN</td>
+      <td>Materials Science Forum</td>
+      <td>journal article</td>
+      <td>1</td>
+      <td>2006</td>
+    </tr>
+    <tr>
+      <th>freq</th>
+      <td>1</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>169</td>
+      <td>970</td>
+      <td>84</td>
+      <td>92</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1995.788945</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>18.224005</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1886.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1993.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2003.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2006.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2012.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>The data frame above provide a pletora of different <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/basics.html#descriptive-statistics">statistics</a> about each single column of the original data, some of them apply to a certain columns while other do not. For instance, all the statistics about number manipulations (<code class="docutils literal notranslate"><span class="pre">mean</span></code>, <code class="docutils literal notranslate"><span class="pre">std</span></code>, <code class="docutils literal notranslate"><span class="pre">min</span></code>, etc.) do not apply to strings, and thus a <code class="docutils literal notranslate"><span class="pre">NaN</span></code> is returned in these cases.</p>
 <p>Some of these statistics are very useful, and allow you to understand something about the data without looking at all of them. For instance:</p>
@@ -496,15 +641,57 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">publications</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;title == &quot;Transformation toughening&quot;&#39;</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;publications&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>doi</th>
+      <th>title</th>
+      <th>publication year</th>
+      <th>publication venue</th>
+      <th>type</th>
+      <th>issue</th>
+      <th>volume</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>731</th>
+      <td>10.1007/bf00809059</td>
+      <td>Transformation toughening</td>
+      <td>1982</td>
+      <td>Journal of Materials Science</td>
+      <td>journal article</td>
+      <td>1</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>732</th>
+      <td>10.1007/bf00809057</td>
+      <td>Transformation toughening</td>
+      <td>1982</td>
+      <td>Journal of Materials Science</td>
+      <td>journal article</td>
+      <td>1</td>
+      <td>17</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Indeed, these two publications may seem the same one, since they share all the other data, except the DOI. Thus, one possibility would be to use the DOI resolver (<a class="reference external" href="https://doi.org">https://doi.org</a>) to see to which kind of entities these DOIs (i.e. <a class="reference external" href="https://doi.org/10.1007/bf00809059">https://doi.org/10.1007/bf00809059</a> and <a class="reference external" href="https://doi.org/10.1007/bf00809057">https://doi.org/10.1007/bf00809057</a>) actually refer to. Once seen them, are they the same entity? Hint: look at the subtitle and the number of the pages…</p>
 <p>In addition to the statistics provided in the previous data frame, other statistics can be calculated using the data in the columns of the data frame. For instance, another important statistics for numeric values is the <a class="reference external" href="https://en.wikipedia.org/wiki/Median">median</a>:</p>
@@ -517,15 +704,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-- Median value of the publication years in the data
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-- Median value of the publication years in the data&quot;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">publications</span><span class="p">[</span><span class="s2">&quot;publication year&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">())</span>
-
-<span class="ne">NameError</span>: name &#39;publications&#39; is not defined
+2003.0
 </pre></div>
 </div>
 </div>
@@ -543,13 +722,8 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-- Categories describing types of publications
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-- Categories describing types of publications&quot;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">publications</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;publications&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;journal article&#39;, &#39;book&#39;, &#39;proceedings article&#39;, &#39;book chapter&#39;,
+       &#39;monograph&#39;], dtype=object)
 </pre></div>
 </div>
 </div>
@@ -566,13 +740,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">type_count</span> <span class="o">=</span> <span class="n">publications</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">type_count</span>
-
-<span class="ne">NameError</span>: name &#39;publications&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>journal article        970
+book                    11
+book chapter            11
+proceedings article      2
+monograph                1
+Name: type, dtype: int64
 </pre></div>
 </div>
 </div>
@@ -585,14 +758,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">type_count</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;bar&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;type_count&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
+<img alt="_images/bc0d66eac8f2073f9dfc0b3d0dbf7357e1821836a5e6c382c21384378e9d314b.png" src="_images/bc0d66eac8f2073f9dfc0b3d0dbf7357e1821836a5e6c382c21384378e9d314b.png" />
 </div>
 </div>
 <p>We can use a similar approach to understand, for instance, what are the top ten venues considering all the publication in the dataset. In this case, we use again the method <code class="docutils literal notranslate"><span class="pre">value_counts</span></code> and then we select the first 10 rows, as shown as follows:</p>
@@ -604,13 +773,17 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">best_venues</span> <span class="o">=</span> <span class="n">publications</span><span class="p">[</span><span class="s2">&quot;publication venue&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()[:</span><span class="mi">10</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">best_venues</span>
-
-<span class="ne">NameError</span>: name &#39;publications&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Materials Science Forum                                           169
+Key Engineering Materials                                          98
+International Journal of Mathematics and Mathematical Sciences     34
+Mediators of Inflammation                                          15
+Applied Physics Letters                                            14
+Journal of Applied Mathematics and Stochastic Analysis             14
+Journal of the American Ceramic Society                            14
+Physical Review Letters                                            10
+Mathematical Problems in Engineering                               10
+Journal of Applied Mathematics and Decision Sciences                9
+Name: publication venue, dtype: int64
 </pre></div>
 </div>
 </div>
@@ -623,14 +796,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">best_venues</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;barh&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;best_venues&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
+<img alt="_images/b3ee53d81ad9b91f9d50bb97cb6b31d866b2c2cc2a9bcd14a7fb237ec1a3fab5.png" src="_images/b3ee53d81ad9b91f9d50bb97cb6b31d866b2c2cc2a9bcd14a7fb237ec1a3fab5.png" />
 </div>
 </div>
 <p>We can use a different plot when we deal with <em>time</em> series, i.e. series of data that are organised temporally (for instance, year by year). For instance, we could be interested in understading how many publications have been published in each year. To retrieve this information, we can use again the method <code class="docutils literal notranslate"><span class="pre">value_counts</span></code>, but this time applied to the column <code class="docutils literal notranslate"><span class="pre">publication</span> <span class="pre">year</span></code>, as shown as follows:</p>
@@ -642,13 +811,18 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">publications_per_year</span> <span class="o">=</span> <span class="n">publications</span><span class="p">[</span><span class="s2">&quot;publication year&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">publications_per_year</span>
-
-<span class="ne">NameError</span>: name &#39;publications&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2006    183
+2007     92
+2005     65
+2008     56
+2003     51
+       ... 
+2012      1
+1917      1
+1886      1
+1955      1
+1952      1
+Name: publication year, Length: 85, dtype: int64
 </pre></div>
 </div>
 </div>
@@ -662,13 +836,18 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">publications_per_year_sorted</span> <span class="o">=</span> <span class="n">publications_per_year</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">publications_per_year_sorted</span>
-
-<span class="ne">NameError</span>: name &#39;publications_per_year&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1886     1
+1893     1
+1894     2
+1895     1
+1902     1
+        ..
+2007    92
+2008    56
+2009    24
+2011     7
+2012     1
+Name: publication year, Length: 85, dtype: int64
 </pre></div>
 </div>
 </div>
@@ -681,14 +860,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">publications_per_year_sorted</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;publications_per_year_sorted&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
+<img alt="_images/cd6f3cfb3c081692e625949880cd76fde98d90c121dcbe8e39554d76f25a7a9b.png" src="_images/cd6f3cfb3c081692e625949880cd76fde98d90c121dcbe8e39554d76f25a7a9b.png" />
 </div>
 </div>
 </section>

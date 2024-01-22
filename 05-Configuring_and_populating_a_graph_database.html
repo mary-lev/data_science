@@ -543,17 +543,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">rdflib</span> <span class="kn">import</span> <span class="n">Graph</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">my_graph</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">()</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;rdflib&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>All the resources (including the properties) are defined using the <a class="reference external" href="https://rdflib.readthedocs.io/en/stable/apidocs/rdflib.html#rdflib.term.URIRef">class <code class="docutils literal notranslate"><span class="pre">URIRef</span></code></a>. The constructor of this class takes in input a string representing the IRI (or URL) of the resource in consideration. For instance, the code below shows all the resources mentioned above, i.e. those referring to classes, attributes and relations:</p>
 <div class="cell docutils container">
@@ -580,18 +569,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">rdflib</span> <span class="kn">import</span> <span class="n">URIRef</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># classes of resources</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">JournalArticle</span> <span class="o">=</span> <span class="n">URIRef</span><span class="p">(</span><span class="s2">&quot;https://schema.org/ScholarlyArticle&quot;</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;rdflib&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>Instead, literals (i.e. value to specify as objects of RDF statements) can be created using the <a class="reference external" href="https://rdflib.readthedocs.io/en/stable/apidocs/rdflib.html#rdflib.term.Literal">class <code class="docutils literal notranslate"><span class="pre">Literal</span></code></a>. The constructor of this class takes in input a value (of any basic type: it can be a string, an integer, etc.) and create the related literal object in RDF, as shown in the next excerpt:</p>
 <div class="cell docutils container">
@@ -601,18 +578,6 @@ document.write(`
 <span class="n">a_string</span> <span class="o">=</span> <span class="n">Literal</span><span class="p">(</span><span class="s2">&quot;a string with this value&quot;</span><span class="p">)</span>
 <span class="n">a_number</span> <span class="o">=</span> <span class="n">Literal</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 <span class="n">a_boolean</span> <span class="o">=</span> <span class="n">Literal</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">rdflib</span> <span class="kn">import</span> <span class="n">Literal</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">a_string</span> <span class="o">=</span> <span class="n">Literal</span><span class="p">(</span><span class="s2">&quot;a string with this value&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">a_number</span> <span class="o">=</span> <span class="n">Literal</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;rdflib&#39;
 </pre></div>
 </div>
 </div>
@@ -660,19 +625,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">read_csv</span><span class="p">,</span> <span class="n">Series</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">rdflib</span> <span class="kn">import</span> <span class="n">RDF</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># This is the string defining the base URL used to defined</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># the URLs of all the resources created from the data</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>As you can see, all the RDF triples have been added to the graph, that currently contain the following number of distinct triples (which is coincident with the number of cells in the original table):</p>
 <div class="cell docutils container">
@@ -684,15 +636,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-- Number of triples added to the graph after processing the venues
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-- Number of triples added to the graph after processing the venues&quot;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">my_graph</span><span class="p">))</span>
-
-<span class="ne">NameError</span>: name &#39;my_graph&#39; is not defined
+12
 </pre></div>
 </div>
 </div>
@@ -741,28 +685,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">publications</span> <span class="o">=</span> <span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../01/01-publications.csv&quot;</span><span class="p">,</span> 
-<span class="g g-Whitespace">      </span><span class="mi">2</span>                         <span class="n">keep_default_na</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>                         <span class="n">dtype</span><span class="o">=</span><span class="p">{</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>                             <span class="s2">&quot;doi&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>                             <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>                             <span class="s2">&quot;publication year&quot;</span><span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>                             <span class="s2">&quot;publication venue&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>                             <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>                             <span class="s2">&quot;issue&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>                             <span class="s2">&quot;volume&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>                         <span class="p">})</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">publications</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="n">local_id</span> <span class="o">=</span> <span class="s2">&quot;publication-&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;read_csv&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <p>After the addition of this new statements, the number of total RDF triples added to the graph is equal to all the cells in the venue CSV plus all the non-empty cells in the publication CSV:</p>
 <div class="cell docutils container">
@@ -774,15 +696,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-- Number of triples added to the graph after processing venues and publications
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-- Number of triples added to the graph after processing venues and publications&quot;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">my_graph</span><span class="p">))</span>
-
-<span class="ne">NameError</span>: name &#39;my_graph&#39; is not defined
+31
 </pre></div>
 </div>
 </div>
@@ -811,19 +725,6 @@ document.write(`
     
 <span class="c1"># Once finished, remeber to close the connection</span>
 <span class="n">store</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">rdflib.plugins.stores.sparqlstore</span> <span class="kn">import</span> <span class="n">SPARQLUpdateStore</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">store</span> <span class="o">=</span> <span class="n">SPARQLUpdateStore</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># The URL of the SPARQL endpoint is the same URL of the Blazegraph</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># instance + &#39;/sparql&#39;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;rdflib&#39;
 </pre></div>
 </div>
 </div>

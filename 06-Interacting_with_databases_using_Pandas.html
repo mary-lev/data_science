@@ -441,18 +441,39 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">sqlite3</span> <span class="kn">import</span> <span class="n">connect</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">read_sql</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">with</span> <span class="n">connect</span><span class="p">(</span><span class="s2">&quot;../04/publications.db&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">con</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;SELECT title FROM JournalArticle&quot;</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Development of Computational Tools for the Inf...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>In vitro selection as a powerful tool for the ...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>It is worth mentioning that, to enable the correct definition of the results of the query into a data frame, it is always better first to create all the necessary data frames within the <code class="docutils literal notranslate"><span class="pre">with</span></code> clause, and then start to work on them “offline”, once the connection to the database has been closed. Otherwise, you could observe some unexpected behaviours.</p>
 <p>Finally, it is worth mentioning that the data type used in the database are converted into the appropriate data type in Pandas. Thus, if a column has been defined as containing integers in the database, we get back the same data type for the column in the data frame. This is clear when we try to retrieve, for instance, an entire table from the SQLite database:</p>
@@ -469,14 +490,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">OperationalError</span><span class="g g-Whitespace">                          </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">with</span> <span class="n">connect</span><span class="p">(</span><span class="s2">&quot;../04/publications.db&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">con</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM JournalArticle&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">df_journal_article_sql</span> <span class="o">=</span> <span class="n">read_sql</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">con</span><span class="p">)</span>
-
-<span class="ne">OperationalError</span>: unable to open database file
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    2003
+1    2002
+Name: publicationYear, dtype: int64
 </pre></div>
 </div>
 </div>
@@ -510,22 +526,42 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">sparql_dataframe</span> <span class="kn">import</span> <span class="n">get</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">endpoint</span> <span class="o">=</span> <span class="s2">&quot;http://127.0.0.1:9999/blazegraph/sparql&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span><span class="s2"> PREFIX rdf:  &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span><span class="s2"> PREFIX schema: &lt;https://schema.org/&gt;</span>
-<span class="s2">   (...)</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span><span class="s2"> }</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span><span class="s2"> &quot;&quot;&quot;</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;sparql_dataframe&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>journal_article</th>
+      <th>title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>https://comp-data.github.io/res/publication-0</td>
+      <td>Development of Computational Tools for the Inf...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>https://comp-data.github.io/res/publication-1</td>
+      <td>In vitro selection as a powerful tool for the ...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Due to the implementation of the <code class="docutils literal notranslate"><span class="pre">get</span></code> function in the <code class="docutils literal notranslate"><span class="pre">sparql_dataframe</span></code> package, though, the values returned by running the SPARQL query will be inferred automatically by looking at all the values of a certain column. Thus, if one wants to change the data type of the values associated to a particular column, one has to cast the column on purpose and the reassigning the column to the data frame. For instance, let us build a query that takes information of all the publications available in the triplestore:</p>
 <div class="cell docutils container">
@@ -560,22 +596,67 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">25</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">publication_query</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="s2"> PREFIX rdf:  &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="s2"> PREFIX schema: &lt;https://schema.org/&gt;</span>
-<span class="s2">   (...)</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span><span class="s2"> }</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span><span class="s2"> &quot;&quot;&quot;</span>
-<span class="ne">---&gt; </span><span class="mi">25</span> <span class="n">df_publications_sparql</span> <span class="o">=</span> <span class="n">get</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">publication_query</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="n">df_publications_sparql</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;get&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>internalId</th>
+      <th>doi</th>
+      <th>publicationYear</th>
+      <th>title</th>
+      <th>issue</th>
+      <th>volume</th>
+      <th>publicationVenue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>https://comp-data.github.io/res/publication-0</td>
+      <td>10.1002/cfg.304</td>
+      <td>2003</td>
+      <td>Development of Computational Tools for the Inf...</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>https://comp-data.github.io/res/venue-0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>https://comp-data.github.io/res/publication-1</td>
+      <td>10.1016/s1367-5931(02)00332-0</td>
+      <td>2002</td>
+      <td>In vitro selection as a powerful tool for the ...</td>
+      <td>3.0</td>
+      <td>6.0</td>
+      <td>https://comp-data.github.io/res/venue-1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>https://comp-data.github.io/res/publication-2</td>
+      <td>10.1002/9780470291092.ch20</td>
+      <td>1981</td>
+      <td>Mechanisms of Toughening in Ceramic Matrix Com...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>https://comp-data.github.io/res/venue-2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>It is worth mentioning that the optional group in the SPARQL query (<code class="docutils literal notranslate"><span class="pre">OPTIONAL</span> <span class="pre">{</span> <span class="pre">...</span> <span class="pre">}</span></code>) is used to allow information to be added to the solution if it is available, otherwise the related variables will be left empty.</p>
 </section>
@@ -590,12 +671,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_publications_sparql</span><span class="o">.</span><span class="n">dtypes</span>
-
-<span class="ne">NameError</span>: name &#39;df_publications_sparql&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>internalId           object
+doi                  object
+publicationYear       int64
+title                object
+issue               float64
+volume              float64
+publicationVenue     object
+dtype: object
 </pre></div>
 </div>
 </div>
@@ -615,14 +698,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_publications_sparql</span><span class="p">[</span><span class="s2">&quot;issue&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_publications_sparql</span><span class="p">[</span><span class="s2">&quot;issue&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;string&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df_publications_sparql</span><span class="p">[</span><span class="s2">&quot;volume&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_publications_sparql</span><span class="p">[</span><span class="s2">&quot;volume&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;string&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">df_publications_sparql</span><span class="o">.</span><span class="n">dtypes</span>
-
-<span class="ne">NameError</span>: name &#39;df_publications_sparql&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>internalId          object
+doi                 object
+publicationYear      int64
+title               object
+issue               string
+volume              string
+publicationVenue    object
+dtype: object
 </pre></div>
 </div>
 </div>
@@ -637,16 +720,67 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_publications_sparql</span> <span class="o">=</span> <span class="n">df_publications_sparql</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df_publications_sparql</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;df_publications_sparql&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>internalId</th>
+      <th>doi</th>
+      <th>publicationYear</th>
+      <th>title</th>
+      <th>issue</th>
+      <th>volume</th>
+      <th>publicationVenue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>https://comp-data.github.io/res/publication-0</td>
+      <td>10.1002/cfg.304</td>
+      <td>2003</td>
+      <td>Development of Computational Tools for the Inf...</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>https://comp-data.github.io/res/venue-0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>https://comp-data.github.io/res/publication-1</td>
+      <td>10.1016/s1367-5931(02)00332-0</td>
+      <td>2002</td>
+      <td>In vitro selection as a powerful tool for the ...</td>
+      <td>3.0</td>
+      <td>6.0</td>
+      <td>https://comp-data.github.io/res/venue-1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>https://comp-data.github.io/res/publication-2</td>
+      <td>10.1002/9780470291092.ch20</td>
+      <td>1981</td>
+      <td>Mechanisms of Toughening in Ceramic Matrix Com...</td>
+      <td></td>
+      <td></td>
+      <td>https://comp-data.github.io/res/venue-2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Of course, this allowed us to remove all <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values. However, if you look at the table and in particular to the columns <code class="docutils literal notranslate"><span class="pre">issue</span></code> and <code class="docutils literal notranslate"><span class="pre">volume</span></code>, you can see something that is still a bit in these two columns.</p>
 <p>Indeed, the two strings defining issues and volumes associated with an article are, actually, the mere cast of the floating value into a string and, as such, they contain the <code class="docutils literal notranslate"><span class="pre">.0</span></code> part of the float that we need to remove. Since the same pattern is repeated in all the values of these two columns, we could apply a similar operation to all their values to clean them up. For doing that, we use the <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.Series.apply.html">method <code class="docutils literal notranslate"><span class="pre">apply</span></code></a> of the class <code class="docutils literal notranslate"><span class="pre">Series</span></code>, which allows us to apply an input function to all the values of a column and to store, in each value, what such a function returns.</p>
@@ -670,17 +804,67 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_publications_sparql</span><span class="p">[</span><span class="s2">&quot;issue&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_publications_sparql</span><span class="p">[</span><span class="s2">&quot;issue&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">remove_dotzero</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df_publications_sparql</span><span class="p">[</span><span class="s2">&quot;volume&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_publications_sparql</span><span class="p">[</span><span class="s2">&quot;volume&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">remove_dotzero</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">df_publications_sparql</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;df_publications_sparql&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>internalId</th>
+      <th>doi</th>
+      <th>publicationYear</th>
+      <th>title</th>
+      <th>issue</th>
+      <th>volume</th>
+      <th>publicationVenue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>https://comp-data.github.io/res/publication-0</td>
+      <td>10.1002/cfg.304</td>
+      <td>2003</td>
+      <td>Development of Computational Tools for the Inf...</td>
+      <td>4</td>
+      <td>4</td>
+      <td>https://comp-data.github.io/res/venue-0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>https://comp-data.github.io/res/publication-1</td>
+      <td>10.1016/s1367-5931(02)00332-0</td>
+      <td>2002</td>
+      <td>In vitro selection as a powerful tool for the ...</td>
+      <td>3</td>
+      <td>6</td>
+      <td>https://comp-data.github.io/res/venue-1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>https://comp-data.github.io/res/publication-2</td>
+      <td>10.1002/9780470291092.ch20</td>
+      <td>1981</td>
+      <td>Mechanisms of Toughening in Ceramic Matrix Com...</td>
+      <td></td>
+      <td></td>
+      <td>https://comp-data.github.io/res/venue-2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="combining-data">
@@ -699,17 +883,87 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">concat</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df_union</span> <span class="o">=</span> <span class="n">concat</span><span class="p">([</span><span class="n">df_journal_article_sql</span><span class="p">,</span> <span class="n">df_publications_sparql</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">df_union</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>internalId</th>
+      <th>doi</th>
+      <th>publicationYear</th>
+      <th>title</th>
+      <th>issue</th>
+      <th>volume</th>
+      <th>publicationVenue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>publication-0</td>
+      <td>10.1002/cfg.304</td>
+      <td>2003</td>
+      <td>Development of Computational Tools for the Inf...</td>
+      <td>4</td>
+      <td>4</td>
+      <td>venue-0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>publication-1</td>
+      <td>10.1016/s1367-5931(02)00332-0</td>
+      <td>2002</td>
+      <td>In vitro selection as a powerful tool for the ...</td>
+      <td>3</td>
+      <td>6</td>
+      <td>venue-1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>https://comp-data.github.io/res/publication-0</td>
+      <td>10.1002/cfg.304</td>
+      <td>2003</td>
+      <td>Development of Computational Tools for the Inf...</td>
+      <td>4</td>
+      <td>4</td>
+      <td>https://comp-data.github.io/res/venue-0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>https://comp-data.github.io/res/publication-1</td>
+      <td>10.1016/s1367-5931(02)00332-0</td>
+      <td>2002</td>
+      <td>In vitro selection as a powerful tool for the ...</td>
+      <td>3</td>
+      <td>6</td>
+      <td>https://comp-data.github.io/res/venue-1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>https://comp-data.github.io/res/publication-2</td>
+      <td>10.1002/9780470291092.ch20</td>
+      <td>1981</td>
+      <td>Mechanisms of Toughening in Ceramic Matrix Com...</td>
+      <td></td>
+      <td></td>
+      <td>https://comp-data.github.io/res/venue-2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>After having obtained a new data frame concatenating the other two, we need to filter out duplicates. Once can follow different approaches for doing so. In this context, we will use the DOIs of the publications to perform the filtering.</p>
 <p>A <a class="reference external" href="https://en.wikipedia.org/wiki/Digital_object_identifier">DOI (Digital Object Identifier)</a> is a persistent identifier used to identify publications uniquely worldwide. Thus, if a publication is included in two distinct databases, it should have the same DOI despite the local identifiers the databases may use.</p>
@@ -722,16 +976,67 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_union_no_duplicates</span> <span class="o">=</span> <span class="n">df_union</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;doi&quot;</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df_union_no_duplicates</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;df_union&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>internalId</th>
+      <th>doi</th>
+      <th>publicationYear</th>
+      <th>title</th>
+      <th>issue</th>
+      <th>volume</th>
+      <th>publicationVenue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>publication-0</td>
+      <td>10.1002/cfg.304</td>
+      <td>2003</td>
+      <td>Development of Computational Tools for the Inf...</td>
+      <td>4</td>
+      <td>4</td>
+      <td>venue-0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>publication-1</td>
+      <td>10.1016/s1367-5931(02)00332-0</td>
+      <td>2002</td>
+      <td>In vitro selection as a powerful tool for the ...</td>
+      <td>3</td>
+      <td>6</td>
+      <td>venue-1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>https://comp-data.github.io/res/publication-2</td>
+      <td>10.1002/9780470291092.ch20</td>
+      <td>1981</td>
+      <td>Mechanisms of Toughening in Ceramic Matrix Com...</td>
+      <td></td>
+      <td></td>
+      <td>https://comp-data.github.io/res/venue-2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Then, we have finally to sort rows in ascending order considering the publication year, and then to return just the columns publication year and title and year of publication of each row. In Pandas, the sorting can be performed using the <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.sort_values.html">method <code class="docutils literal notranslate"><span class="pre">sort_values</span></code></a> of the class <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, that takes in input the name of the column to use to perform the sorting, as shown as follows:</p>
 <div class="cell docutils container">
@@ -742,16 +1047,67 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_union_no_duplicates_sorted</span> <span class="o">=</span> <span class="n">df_union_no_duplicates</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;publicationYear&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df_union_no_duplicates_sorted</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;df_union_no_duplicates&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>internalId</th>
+      <th>doi</th>
+      <th>publicationYear</th>
+      <th>title</th>
+      <th>issue</th>
+      <th>volume</th>
+      <th>publicationVenue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4</th>
+      <td>https://comp-data.github.io/res/publication-2</td>
+      <td>10.1002/9780470291092.ch20</td>
+      <td>1981</td>
+      <td>Mechanisms of Toughening in Ceramic Matrix Com...</td>
+      <td></td>
+      <td></td>
+      <td>https://comp-data.github.io/res/venue-2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>publication-1</td>
+      <td>10.1016/s1367-5931(02)00332-0</td>
+      <td>2002</td>
+      <td>In vitro selection as a powerful tool for the ...</td>
+      <td>3</td>
+      <td>6</td>
+      <td>venue-1</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>publication-0</td>
+      <td>10.1002/cfg.304</td>
+      <td>2003</td>
+      <td>Development of Computational Tools for the Inf...</td>
+      <td>4</td>
+      <td>4</td>
+      <td>venue-0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Finally, to select a sub-data frame, we use the approach adopted in past tutorial, by creating a new data frame selecting only some of the columns of another one:</p>
 <div class="cell docutils container">
@@ -762,16 +1118,47 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_final</span> <span class="o">=</span> <span class="n">df_union_no_duplicates_sorted</span><span class="p">[[</span><span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="s2">&quot;publicationYear&quot;</span><span class="p">]]</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df_final</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;df_union_no_duplicates_sorted&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>title</th>
+      <th>publicationYear</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4</th>
+      <td>Mechanisms of Toughening in Ceramic Matrix Com...</td>
+      <td>1981</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>In vitro selection as a powerful tool for the ...</td>
+      <td>2002</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Development of Computational Tools for the Inf...</td>
+      <td>2003</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 </section>

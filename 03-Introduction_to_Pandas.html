@@ -481,14 +481,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">Series</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">my_series</span> <span class="o">=</span> <span class="n">Series</span><span class="p">([</span><span class="s2">&quot;Ron&quot;</span><span class="p">,</span> <span class="s2">&quot;Hermione&quot;</span><span class="p">,</span> <span class="s2">&quot;Harry&quot;</span><span class="p">,</span> <span class="s2">&quot;Tom&quot;</span><span class="p">,</span> <span class="s2">&quot;James&quot;</span><span class="p">,</span> <span class="s2">&quot;Lily&quot;</span><span class="p">,</span> <span class="s2">&quot;Severus&quot;</span><span class="p">,</span> <span class="s2">&quot;Sirius&quot;</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">my_series</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0         Ron
+1    Hermione
+2       Harry
+3         Tom
+4       James
+5        Lily
+6     Severus
+7      Sirius
+dtype: object
 </pre></div>
 </div>
 </div>
@@ -504,14 +505,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">my_series</span> <span class="o">=</span> <span class="n">Series</span><span class="p">([</span><span class="s2">&quot;Ron&quot;</span><span class="p">,</span> <span class="s2">&quot;Hermione&quot;</span><span class="p">,</span> <span class="s2">&quot;Harry&quot;</span><span class="p">,</span> <span class="s2">&quot;Tom&quot;</span><span class="p">,</span> <span class="s2">&quot;James&quot;</span><span class="p">,</span> <span class="s2">&quot;Lily&quot;</span><span class="p">,</span> <span class="s2">&quot;Severus&quot;</span><span class="p">,</span> <span class="s2">&quot;Sirius&quot;</span><span class="p">],</span> 
-<span class="g g-Whitespace">      </span><span class="mi">2</span>                    <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;given name&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">my_series</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;Series&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0         Ron
+1    Hermione
+2       Harry
+3         Tom
+4       James
+5        Lily
+6     Severus
+7      Sirius
+Name: given name, dtype: string
 </pre></div>
 </div>
 </div>
@@ -529,14 +531,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sub_series</span> <span class="o">=</span> <span class="n">my_series</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The new subseries is:&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">sub_series</span><span class="p">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The new subseries is:
+1    Hermione
+2       Harry
+3         Tom
+4       James
+5        Lily
+Name: given name, dtype: string
 
-<span class="ne">NameError</span>: name &#39;my_series&#39; is not defined
+The element at index 5 of the new subseries is:
+Lily
 </pre></div>
 </div>
 </div>
@@ -604,18 +608,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">DataFrame</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">my_dataframe</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="p">({</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="s2">&quot;given name&quot;</span> <span class="p">:</span> <span class="n">my_series</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="s2">&quot;family name&quot;</span> <span class="p">:</span> <span class="n">Series</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>         <span class="p">[</span><span class="s2">&quot;Wisley&quot;</span><span class="p">,</span> <span class="s2">&quot;Granger&quot;</span><span class="p">,</span> <span class="s2">&quot;Potter&quot;</span><span class="p">,</span> <span class="s2">&quot;Riddle&quot;</span><span class="p">,</span> <span class="s2">&quot;Potter&quot;</span><span class="p">,</span> <span class="s2">&quot;Potter&quot;</span><span class="p">,</span> <span class="s2">&quot;Snape&quot;</span><span class="p">,</span> <span class="s2">&quot;Black&quot;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="p">})</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="nb">print</span><span class="p">(</span><span class="n">my_dataframe</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  given name family name
+0        Ron      Wisley
+1   Hermione     Granger
+2      Harry      Potter
+3        Tom      Riddle
+4      James      Potter
+5       Lily      Potter
+6    Severus       Snape
+7     Sirius       Black
 </pre></div>
 </div>
 </div>
@@ -629,13 +630,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">family_name_column</span> <span class="o">=</span> <span class="n">my_dataframe</span><span class="p">[</span><span class="s2">&quot;family name&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">family_name_column</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;my_dataframe&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     Wisley
+1    Granger
+2     Potter
+3     Riddle
+4     Potter
+5     Potter
+6      Snape
+7      Black
+Name: family name, dtype: string
 </pre></div>
 </div>
 </div>
@@ -649,13 +652,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">third_row</span> <span class="o">=</span> <span class="n">my_dataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">third_row</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;my_dataframe&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>given name      Harry
+family name    Potter
+Name: 2, dtype: string
 </pre></div>
 </div>
 </div>
@@ -675,17 +674,17 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The new subdataframe is:
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The new subdataframe is:&quot;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">sub_dataframe</span> <span class="o">=</span> <span class="n">my_dataframe</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">sub_dataframe</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">The row at index 2 of the new subdataframe is:&quot;</span><span class="p">)</span>
+  given name family name
+1   Hermione     Granger
+2      Harry      Potter
+3        Tom      Riddle
+4      James      Potter
+5       Lily      Potter
 
-<span class="ne">NameError</span>: name &#39;my_dataframe&#39; is not defined
+The row at index 2 of the new subdataframe is:
+given name      Harry
+family name    Potter
+Name: 2, dtype: string
 </pre></div>
 </div>
 </div>
@@ -707,14 +706,20 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">read_csv</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df_publications</span> <span class="o">=</span> <span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../01/01-publications.csv&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">df_publications</span><span class="p">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                             doi  \
+0                10.1002/cfg.304   
+1  10.1016/s1367-5931(02)00332-0   
+2     10.1002/9780470291092.ch20   
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+                                               title  publication year  \
+0  Development of Computational Tools for the Inf...              2003   
+1  In vitro selection as a powerful tool for the ...              2002   
+2  Mechanisms of Toughening in Ceramic Matrix Com...              1981   
+
+  publication venue             type  issue  volume  
+0         1531-6912  journal article    4.0     4.0  
+1         1367-5931  journal article    3.0     6.0  
+2     9780470291092     book chapter    NaN     NaN  
 </pre></div>
 </div>
 </div>
@@ -727,15 +732,67 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_publications</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;df_publications&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>doi</th>
+      <th>title</th>
+      <th>publication year</th>
+      <th>publication venue</th>
+      <th>type</th>
+      <th>issue</th>
+      <th>volume</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>10.1002/cfg.304</td>
+      <td>Development of Computational Tools for the Inf...</td>
+      <td>2003</td>
+      <td>1531-6912</td>
+      <td>journal article</td>
+      <td>4.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10.1016/s1367-5931(02)00332-0</td>
+      <td>In vitro selection as a powerful tool for the ...</td>
+      <td>2002</td>
+      <td>1367-5931</td>
+      <td>journal article</td>
+      <td>3.0</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>10.1002/9780470291092.ch20</td>
+      <td>Mechanisms of Toughening in Ceramic Matrix Com...</td>
+      <td>1981</td>
+      <td>9780470291092</td>
+      <td>book chapter</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>By looking at the data frame, it appears clear that there is something odd in the data types shown, in particular in the columns <code class="docutils literal notranslate"><span class="pre">issue</span></code> and <code class="docutils literal notranslate"><span class="pre">volume</span></code>. In these columns there are two main issues. The first one concerns the data types associated to the column. Indeed, it seems that Pandas has interpreted automatically these columns as floating numbers, while they should be made of strings! This can be conformed by printing the data type (attribute <code class="docutils literal notranslate"><span class="pre">dtype</span></code>) associated to one of these columns, for instance:</p>
 <div class="cell docutils container">
@@ -745,12 +802,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">df_publications</span><span class="p">[</span><span class="s2">&quot;issue&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;df_publications&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float64
 </pre></div>
 </div>
 </div>
@@ -776,26 +828,67 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_publications</span> <span class="o">=</span> <span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../01/01-publications.csv&quot;</span><span class="p">,</span> 
-<span class="g g-Whitespace">      </span><span class="mi">2</span>                            <span class="n">keep_default_na</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>                            <span class="n">dtype</span><span class="o">=</span><span class="p">{</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>                                <span class="s2">&quot;doi&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>                                <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>                                <span class="s2">&quot;publication year&quot;</span><span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>                                <span class="s2">&quot;publication venue&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>                                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>                                <span class="s2">&quot;issue&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>                                <span class="s2">&quot;volume&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>                            <span class="p">})</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">df_publications</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;read_csv&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>doi</th>
+      <th>title</th>
+      <th>publication year</th>
+      <th>publication venue</th>
+      <th>type</th>
+      <th>issue</th>
+      <th>volume</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>10.1002/cfg.304</td>
+      <td>Development of Computational Tools for the Inf...</td>
+      <td>2003</td>
+      <td>1531-6912</td>
+      <td>journal article</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10.1016/s1367-5931(02)00332-0</td>
+      <td>In vitro selection as a powerful tool for the ...</td>
+      <td>2002</td>
+      <td>1367-5931</td>
+      <td>journal article</td>
+      <td>3</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>10.1002/9780470291092.ch20</td>
+      <td>Mechanisms of Toughening in Ceramic Matrix Com...</td>
+      <td>1981</td>
+      <td>9780470291092</td>
+      <td>book chapter</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="iterating-over-a-dataframe-and-a-series">
@@ -812,14 +905,38 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df_publications</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">The index of the current row is&quot;</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The content of the row is as follows:&quot;</span><span class="p">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The index of the current row is 0
+The content of the row is as follows:
+doi                                                    10.1002/cfg.304
+title                Development of Computational Tools for the Inf...
+publication year                                                  2003
+publication venue                                            1531-6912
+type                                                   journal article
+issue                                                                4
+volume                                                               4
+Name: 0, dtype: object
 
-<span class="ne">NameError</span>: name &#39;df_publications&#39; is not defined
+The index of the current row is 1
+The content of the row is as follows:
+doi                                      10.1016/s1367-5931(02)00332-0
+title                In vitro selection as a powerful tool for the ...
+publication year                                                  2002
+publication venue                                            1367-5931
+type                                                   journal article
+issue                                                                3
+volume                                                               6
+Name: 1, dtype: object
+
+The index of the current row is 2
+The content of the row is as follows:
+doi                                         10.1002/9780470291092.ch20
+title                Mechanisms of Toughening in Ceramic Matrix Com...
+publication year                                                  1981
+publication venue                                        9780470291092
+type                                                      book chapter
+issue                                                                 
+volume                                                                
+Name: 2, dtype: object
 </pre></div>
 </div>
 </div>
@@ -835,14 +952,32 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">for</span> <span class="n">row_idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df_publications</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Row index&quot;</span><span class="p">,</span> <span class="n">row_idx</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="k">for</span> <span class="n">item_idx</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Row index 0
+doi --&gt; 10.1002/cfg.304
+title --&gt; Development of Computational Tools for the Inference of Protein Interaction Specificity Rules and Functional Annotation Using Structural Information
+publication year --&gt; 2003
+publication venue --&gt; 1531-6912
+type --&gt; journal article
+issue --&gt; 4
+volume --&gt; 4
 
-<span class="ne">NameError</span>: name &#39;df_publications&#39; is not defined
+Row index 1
+doi --&gt; 10.1016/s1367-5931(02)00332-0
+title --&gt; In vitro selection as a powerful tool for the applied evolution of proteins and peptides
+publication year --&gt; 2002
+publication venue --&gt; 1367-5931
+type --&gt; journal article
+issue --&gt; 3
+volume --&gt; 6
+
+Row index 2
+doi --&gt; 10.1002/9780470291092.ch20
+title --&gt; Mechanisms of Toughening in Ceramic Matrix Composites
+publication year --&gt; 1981
+publication venue --&gt; 9780470291092
+type --&gt; book chapter
+issue --&gt; 
+volume --&gt; 
 </pre></div>
 </div>
 </div>
@@ -858,14 +993,54 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">for</span> <span class="n">column_name</span><span class="p">,</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">df_publications</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">The name of the current column is&quot;</span><span class="p">,</span> <span class="n">column_name</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The content of the column is as follows:&quot;</span><span class="p">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The name of the current column is doi
+The content of the column is as follows:
+0                  10.1002/cfg.304
+1    10.1016/s1367-5931(02)00332-0
+2       10.1002/9780470291092.ch20
+Name: doi, dtype: string
 
-<span class="ne">NameError</span>: name &#39;df_publications&#39; is not defined
+The name of the current column is title
+The content of the column is as follows:
+0    Development of Computational Tools for the Inf...
+1    In vitro selection as a powerful tool for the ...
+2    Mechanisms of Toughening in Ceramic Matrix Com...
+Name: title, dtype: string
+
+The name of the current column is publication year
+The content of the column is as follows:
+0    2003
+1    2002
+2    1981
+Name: publication year, dtype: int64
+
+The name of the current column is publication venue
+The content of the column is as follows:
+0        1531-6912
+1        1367-5931
+2    9780470291092
+Name: publication venue, dtype: string
+
+The name of the current column is type
+The content of the column is as follows:
+0    journal article
+1    journal article
+2       book chapter
+Name: type, dtype: string
+
+The name of the current column is issue
+The content of the column is as follows:
+0    4
+1    3
+2     
+Name: issue, dtype: string
+
+The name of the current column is volume
+The content of the column is as follows:
+0    4
+1    6
+2     
+Name: volume, dtype: string
 </pre></div>
 </div>
 </div>
@@ -878,31 +1053,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_publications</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;03-publications.csv&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;df_publications&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <p>However, the method <code class="docutils literal notranslate"><span class="pre">to_csv</span></code> called as shown above will store also an additional column at the beginning, i.e. that related with the index labels for each row. In order to avoid to preserve the index, it is possible to set the input named parameter <code class="docutils literal notranslate"><span class="pre">index</span></code> to <code class="docutils literal notranslate"><span class="pre">False</span></code>, as shown in the following excerpt:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_publications</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;03-publications_no_index.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_publications</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;03-publications_no_index.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;df_publications&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -922,15 +1077,57 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_publications</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;type == &#39;journal article&#39;&quot;</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;df_publications&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>doi</th>
+      <th>title</th>
+      <th>publication year</th>
+      <th>publication venue</th>
+      <th>type</th>
+      <th>issue</th>
+      <th>volume</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>10.1002/cfg.304</td>
+      <td>Development of Computational Tools for the Inf...</td>
+      <td>2003</td>
+      <td>1531-6912</td>
+      <td>journal article</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10.1016/s1367-5931(02)00332-0</td>
+      <td>In vitro selection as a powerful tool for the ...</td>
+      <td>2002</td>
+      <td>1367-5931</td>
+      <td>journal article</td>
+      <td>3</td>
+      <td>6</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>In case we want to refer to columns with spaces, we must use the tick character (i.e. <code>`</code>) to enclose the name of the column. For instance, to get all the rows that have a publication date lesser than <code>2003</code>, we can run the following query:</p>
 <div class="cell docutils container">
@@ -940,15 +1137,57 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">18</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_publications</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;`publication year` &lt; 2003&quot;</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;df_publications&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>doi</th>
+      <th>title</th>
+      <th>publication year</th>
+      <th>publication venue</th>
+      <th>type</th>
+      <th>issue</th>
+      <th>volume</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>10.1016/s1367-5931(02)00332-0</td>
+      <td>In vitro selection as a powerful tool for the ...</td>
+      <td>2002</td>
+      <td>1367-5931</td>
+      <td>journal article</td>
+      <td>3</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>10.1002/9780470291092.ch20</td>
+      <td>Mechanisms of Toughening in Ceramic Matrix Com...</td>
+      <td>1981</td>
+      <td>9780470291092</td>
+      <td>book chapter</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>It is also possible to combine queries by using the boolean operators <code class="docutils literal notranslate"><span class="pre">and</span></code> and <code class="docutils literal notranslate"><span class="pre">or</span></code>. For instance, to get all the journal articles published before 2003, we can run the following query:</p>
 <div class="cell docutils container">
@@ -958,15 +1197,47 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">19</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_publications</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;type == &#39;journal article&#39; and `publication year` &lt; 2003&quot;</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;df_publications&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>doi</th>
+      <th>title</th>
+      <th>publication year</th>
+      <th>publication venue</th>
+      <th>type</th>
+      <th>issue</th>
+      <th>volume</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>10.1016/s1367-5931(02)00332-0</td>
+      <td>In vitro selection as a powerful tool for the ...</td>
+      <td>2002</td>
+      <td>1367-5931</td>
+      <td>journal article</td>
+      <td>3</td>
+      <td>6</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="joining">
@@ -986,22 +1257,57 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">20</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_venues</span> <span class="o">=</span> <span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../01/01-venues.csv&quot;</span><span class="p">,</span> 
-<span class="g g-Whitespace">      </span><span class="mi">2</span>                      <span class="n">keep_default_na</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>                      <span class="n">dtype</span><span class="o">=</span><span class="p">{</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>                          <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>                          <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>                          <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>                      <span class="p">})</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">df_venues</span>  <span class="c1"># draw the table in the notebook</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;read_csv&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>name</th>
+      <th>type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1531-6912</td>
+      <td>Comparative and Functional Genomics</td>
+      <td>journal</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1367-5931</td>
+      <td>Current Opinion in Chemical Biology</td>
+      <td>journal</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>9780470291092</td>
+      <td>Proceedings of the 5th Annual Conference on Co...</td>
+      <td>book</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1027-3662</td>
+      <td>Journal of Theoretical Medicine</td>
+      <td>journal</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Thus, in order to run such a query, first we should ask to this new data frame which is the <code class="docutils literal notranslate"><span class="pre">id</span></code> associated to the journal named <em>Current Openion in Chemical Biology</em>, and then to ask the other data frame with publications to retrieve all the rows that have such an identifier as <code class="docutils literal notranslate"><span class="pre">publication</span> <span class="pre">venue</span></code>.</p>
 <p>However, in Pandas this can be done in just one query if we join before the two data frames in a new one containing a combination of the two tables. Indeed, as you can obsever, the data frame of publications and that of venues share some values in common. Indeed, as mentioned above, the values specified in the <code class="docutils literal notranslate"><span class="pre">publication</span> <span class="pre">venue</span></code> column in the publications data frame recall those specified in the <code class="docutils literal notranslate"><span class="pre">id</span></code> column of the venue data frame. Thus, in principle, it is possible to join these two tables by considering that common values.</p>
@@ -1016,17 +1322,79 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">21</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">merge</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df_joined</span> <span class="o">=</span> <span class="n">merge</span><span class="p">(</span><span class="n">df_publications</span><span class="p">,</span> <span class="n">df_venues</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;publication venue&quot;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;id&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">df_joined</span>  <span class="c1"># draw the table in the notebook</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>doi</th>
+      <th>title</th>
+      <th>publication year</th>
+      <th>publication venue</th>
+      <th>type_x</th>
+      <th>issue</th>
+      <th>volume</th>
+      <th>id</th>
+      <th>name</th>
+      <th>type_y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>10.1002/cfg.304</td>
+      <td>Development of Computational Tools for the Inf...</td>
+      <td>2003</td>
+      <td>1531-6912</td>
+      <td>journal article</td>
+      <td>4</td>
+      <td>4</td>
+      <td>1531-6912</td>
+      <td>Comparative and Functional Genomics</td>
+      <td>journal</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10.1016/s1367-5931(02)00332-0</td>
+      <td>In vitro selection as a powerful tool for the ...</td>
+      <td>2002</td>
+      <td>1367-5931</td>
+      <td>journal article</td>
+      <td>3</td>
+      <td>6</td>
+      <td>1367-5931</td>
+      <td>Current Opinion in Chemical Biology</td>
+      <td>journal</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>10.1002/9780470291092.ch20</td>
+      <td>Mechanisms of Toughening in Ceramic Matrix Com...</td>
+      <td>1981</td>
+      <td>9780470291092</td>
+      <td>book chapter</td>
+      <td></td>
+      <td></td>
+      <td>9780470291092</td>
+      <td>Proceedings of the 5th Annual Conference on Co...</td>
+      <td>book</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>As you can see from the data frame above, all the rows of the publications data frame (the <em>left</em> data frame of the join) have been extended using the values specified in the venues data frame (the <em>right</em> data frame of the join) mapping the values in the columns <code class="docutils literal notranslate"><span class="pre">publication</span> <span class="pre">year</span></code> (in <em>left</em>) and <code class="docutils literal notranslate"><span class="pre">id</span></code> (in <em>right</em>). In addition, Pandas modifies the name of the columns that have the same name in both data frames of the join – indeed the columns <code class="docutils literal notranslate"><span class="pre">type</span></code> became <code class="docutils literal notranslate"><span class="pre">type_x</span></code> (refferring to <em>left</em>) and <code class="docutils literal notranslate"><span class="pre">type_y</span></code> (referring to <em>right</em>).</p>
 <p>Having this new data frame, the original query we wanted to run becomes pretty easy to define:</p>
@@ -1037,15 +1405,53 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">22</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_joined</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;type_y == &#39;journal&#39; and name == &#39;Current Opinion in Chemical Biology&#39;&quot;</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;df_joined&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>doi</th>
+      <th>title</th>
+      <th>publication year</th>
+      <th>publication venue</th>
+      <th>type_x</th>
+      <th>issue</th>
+      <th>volume</th>
+      <th>id</th>
+      <th>name</th>
+      <th>type_y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>10.1016/s1367-5931(02)00332-0</td>
+      <td>In vitro selection as a powerful tool for the ...</td>
+      <td>2002</td>
+      <td>1367-5931</td>
+      <td>journal article</td>
+      <td>3</td>
+      <td>6</td>
+      <td>1367-5931</td>
+      <td>Current Opinion in Chemical Biology</td>
+      <td>journal</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 </section>

@@ -501,23 +501,52 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">read_csv</span><span class="p">,</span> <span class="n">Series</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">venues</span> <span class="o">=</span> <span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../01/01-venues.csv&quot;</span><span class="p">,</span> 
-<span class="g g-Whitespace">      </span><span class="mi">4</span>                   <span class="n">keep_default_na</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>                   <span class="n">dtype</span><span class="o">=</span><span class="p">{</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>                       <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>                   <span class="p">})</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="c1"># This will create a new data frame starting from &#39;venues&#39; one,</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="c1"># and it will include only the column &quot;id&quot;</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>venueId</th>
+      <th>id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>venue-0</td>
+      <td>1531-6912</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>venue-1</td>
+      <td>1367-5931</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>venue-2</td>
+      <td>9780470291092</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>venue-3</td>
+      <td>1027-3662</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>In practice, after reading the CSV, we create a new data frame with only the column <code class="docutils literal notranslate"><span class="pre">id</span></code> by using the command <code class="docutils literal notranslate"><span class="pre">&lt;data</span> <span class="pre">frame&gt;[[&lt;column</span> <span class="pre">name</span> <span class="pre">1&gt;,</span> <span class="pre">&lt;column</span> <span class="pre">name</span> <span class="pre">2&gt;,</span> <span class="pre">...]]</span></code>. In practice, this command will create a new sub-data frame using only the values in the columns specified.</p>
 <p>Then, we have to define the internal identifiers for all the venues. To this end, we iterate over the rows of the new data frame and we compose a list of internal identifiers by concatenating the string <code class="docutils literal notranslate"><span class="pre">&quot;venue-&quot;</span></code> with the string of the values specified in the index of each row. Thus, we add that list (mediated via a <code class="docutils literal notranslate"><span class="pre">Series</span></code> of string values) into the data frame using the <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.insert.html">method <code class="docutils literal notranslate"><span class="pre">insert</span></code></a>, which takes in input the position where to put the new column (<code class="docutils literal notranslate"><span class="pre">0</span></code> is the first position, <code class="docutils literal notranslate"><span class="pre">1</span></code> is the second position, etc.), the column name, and the values to associate to that column.</p>
@@ -534,17 +563,51 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Data frame of journals</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">journals</span> <span class="o">=</span> <span class="n">venues</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;type == &#39;journal&#39;&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">journals</span>  <span class="c1"># Showing the data frame</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;venues&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>name</th>
+      <th>type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1531-6912</td>
+      <td>Comparative and Functional Genomics</td>
+      <td>journal</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1367-5931</td>
+      <td>Current Opinion in Chemical Biology</td>
+      <td>journal</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1027-3662</td>
+      <td>Journal of Theoretical Medicine</td>
+      <td>journal</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Then, for each row in the new data frame, we retrieve the associated <code class="docutils literal notranslate"><span class="pre">internalId</span></code> of each journal by looking at the table <code class="docutils literal notranslate"><span class="pre">venueId</span></code> created above. In this case, we can use the method <code class="docutils literal notranslate"><span class="pre">merge</span></code> to accomplish the task:</p>
 <div class="cell docutils container">
@@ -557,17 +620,55 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">merge</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df_joined</span> <span class="o">=</span> <span class="n">merge</span><span class="p">(</span><span class="n">journals</span><span class="p">,</span> <span class="n">venues_ids</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;id&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">df_joined</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>name</th>
+      <th>type</th>
+      <th>venueId</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1531-6912</td>
+      <td>Comparative and Functional Genomics</td>
+      <td>journal</td>
+      <td>venue-0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1367-5931</td>
+      <td>Current Opinion in Chemical Biology</td>
+      <td>journal</td>
+      <td>venue-1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1027-3662</td>
+      <td>Journal of Theoretical Medicine</td>
+      <td>journal</td>
+      <td>venue-3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Finally, the final journal table can be defined by selecting only two columns of the last merged data frame and by modifying the column name <code class="docutils literal notranslate"><span class="pre">venueId</span></code> in <code class="docutils literal notranslate"><span class="pre">internalId</span></code>, as shown as follows:</p>
 <div class="cell docutils container">
@@ -579,17 +680,47 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">journals</span> <span class="o">=</span> <span class="n">df_joined</span><span class="p">[[</span><span class="s2">&quot;venueId&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">]]</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">journals</span> <span class="o">=</span> <span class="n">journals</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;venueId&quot;</span><span class="p">:</span> <span class="s2">&quot;internalId&quot;</span><span class="p">})</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">journals</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;df_joined&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>internalId</th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>venue-0</td>
+      <td>Comparative and Functional Genomics</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>venue-1</td>
+      <td>Current Opinion in Chemical Biology</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>venue-3</td>
+      <td>Journal of Theoretical Medicine</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>The rename of a column is performed with the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rename.html">method <code class="docutils literal notranslate"><span class="pre">rename</span></code></a>, that takes in input a dictonary with the named paramenter <code class="docutils literal notranslate"><span class="pre">columns</span></code>, where each key represent the old column name while the value is the new column name. The method returns a new data frame where the columns are renamed as specified.</p>
 <p>A similar organisation can be provided also for books, by using the code specified above, customising it for handling books:</p>
@@ -606,18 +737,37 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Data frame of books</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">books</span> <span class="o">=</span> <span class="n">venues</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;type == &#39;book&#39;&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">df_joined</span> <span class="o">=</span> <span class="n">merge</span><span class="p">(</span><span class="n">books</span><span class="p">,</span> <span class="n">venues_ids</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;id&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">books</span> <span class="o">=</span> <span class="n">df_joined</span><span class="p">[[</span><span class="s2">&quot;venueId&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">]]</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;venues&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>internalId</th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>venue-2</td>
+      <td>Proceedings of the 5th Annual Conference on Co...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="tables-for-publications">
@@ -647,27 +797,71 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">publications</span> <span class="o">=</span> <span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../01/01-publications.csv&quot;</span><span class="p">,</span> 
-<span class="g g-Whitespace">      </span><span class="mi">2</span>                         <span class="n">keep_default_na</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>                         <span class="n">dtype</span><span class="o">=</span><span class="p">{</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>                             <span class="s2">&quot;doi&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>                             <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>                             <span class="s2">&quot;publication year&quot;</span><span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>                             <span class="s2">&quot;publication venue&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>                             <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>                             <span class="s2">&quot;issue&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>                             <span class="s2">&quot;volume&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>                         <span class="p">})</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="c1"># Create a new column with internal identifiers for each publication</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">publication_internal_id</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;read_csv&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>internalId</th>
+      <th>doi</th>
+      <th>title</th>
+      <th>publication year</th>
+      <th>publication venue</th>
+      <th>type</th>
+      <th>issue</th>
+      <th>volume</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>publication-0</td>
+      <td>10.1002/cfg.304</td>
+      <td>Development of Computational Tools for the Inf...</td>
+      <td>2003</td>
+      <td>1531-6912</td>
+      <td>journal article</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>publication-1</td>
+      <td>10.1016/s1367-5931(02)00332-0</td>
+      <td>In vitro selection as a powerful tool for the ...</td>
+      <td>2002</td>
+      <td>1367-5931</td>
+      <td>journal article</td>
+      <td>3</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>publication-2</td>
+      <td>10.1002/9780470291092.ch20</td>
+      <td>Mechanisms of Toughening in Ceramic Matrix Com...</td>
+      <td>1981</td>
+      <td>9780470291092</td>
+      <td>book chapter</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Then, we create the table for journal articles similarly to what we have done before:</p>
 <div class="cell docutils container">
@@ -685,19 +879,57 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Data frame of journal articles</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">journal_articles</span> <span class="o">=</span> <span class="n">publications</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;type == &#39;journal article&#39;&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df_joined</span> <span class="o">=</span> <span class="n">merge</span><span class="p">(</span><span class="n">journal_articles</span><span class="p">,</span> <span class="n">venues_ids</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;publication venue&quot;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;id&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">journal_articles</span> <span class="o">=</span> <span class="n">df_joined</span><span class="p">[</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="p">[</span><span class="s2">&quot;internalId&quot;</span><span class="p">,</span> <span class="s2">&quot;doi&quot;</span><span class="p">,</span> <span class="s2">&quot;publication year&quot;</span><span class="p">,</span> <span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="s2">&quot;issue&quot;</span><span class="p">,</span> <span class="s2">&quot;volume&quot;</span><span class="p">,</span> <span class="s2">&quot;venueId&quot;</span><span class="p">]]</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;publications&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>internalId</th>
+      <th>doi</th>
+      <th>publicationYear</th>
+      <th>title</th>
+      <th>issue</th>
+      <th>volume</th>
+      <th>publicationVenue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>publication-0</td>
+      <td>10.1002/cfg.304</td>
+      <td>2003</td>
+      <td>Development of Computational Tools for the Inf...</td>
+      <td>4</td>
+      <td>4</td>
+      <td>venue-0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>publication-1</td>
+      <td>10.1016/s1367-5931(02)00332-0</td>
+      <td>2002</td>
+      <td>In vitro selection as a powerful tool for the ...</td>
+      <td>3</td>
+      <td>6</td>
+      <td>venue-1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Similarly, we create the table for book chapters:</p>
 <div class="cell docutils container">
@@ -715,19 +947,43 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Data frame of book chapters</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">book_chapters</span> <span class="o">=</span> <span class="n">publications</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;type == &#39;book chapter&#39;&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df_joined</span> <span class="o">=</span> <span class="n">merge</span><span class="p">(</span><span class="n">book_chapters</span><span class="p">,</span> <span class="n">venues_ids</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;publication venue&quot;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;id&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">book_chapters</span> <span class="o">=</span> <span class="n">df_joined</span><span class="p">[</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="p">[</span><span class="s2">&quot;internalId&quot;</span><span class="p">,</span> <span class="s2">&quot;doi&quot;</span><span class="p">,</span> <span class="s2">&quot;publication year&quot;</span><span class="p">,</span> <span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="s2">&quot;venueId&quot;</span><span class="p">]]</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;publications&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>internalId</th>
+      <th>doi</th>
+      <th>publicationYear</th>
+      <th>title</th>
+      <th>publicationVenue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>publication-2</td>
+      <td>10.1002/9780470291092.ch20</td>
+      <td>1981</td>
+      <td>Mechanisms of Toughening in Ceramic Matrix Com...</td>
+      <td>venue-2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="adding-the-tables-to-the-database">
@@ -741,19 +997,6 @@ document.write(`
     <span class="n">books</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s2">&quot;Book&quot;</span><span class="p">,</span> <span class="n">con</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s2">&quot;replace&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="n">journal_articles</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s2">&quot;JournalArticle&quot;</span><span class="p">,</span> <span class="n">con</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s2">&quot;replace&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="n">book_chapters</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s2">&quot;BookChapter&quot;</span><span class="p">,</span> <span class="n">con</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s2">&quot;replace&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">with</span> <span class="n">connect</span><span class="p">(</span><span class="s2">&quot;publications.db&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">con</span><span class="p">:</span>
-<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">venues_ids</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s2">&quot;VenueId&quot;</span><span class="p">,</span> <span class="n">con</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s2">&quot;replace&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">journals</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s2">&quot;Journal&quot;</span><span class="p">,</span> <span class="n">con</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s2">&quot;replace&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">books</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s2">&quot;Book&quot;</span><span class="p">,</span> <span class="n">con</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s2">&quot;replace&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;venues_ids&#39; is not defined
 </pre></div>
 </div>
 </div>
